@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C59C1633162B380300ECDEA9 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C59C1632162B380300ECDEA9 /* main.c */; };
+		C59C1633162B380300ECDEA9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C1632162B380300ECDEA9 /* main.cpp */; };
 		C59C1635162B380300ECDEA9 /* nuPong.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C59C1634162B380300ECDEA9 /* nuPong.1 */; };
 		C59C163C162B391100ECDEA9 /* libglfw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C59C163B162B391100ECDEA9 /* libglfw.a */; };
 		C59C163F162B39C900ECDEA9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59C163E162B39C900ECDEA9 /* OpenGL.framework */; };
 		C59C1641162B39CE00ECDEA9 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59C1640162B39CE00ECDEA9 /* IOKit.framework */; };
 		C59C1643162B39E300ECDEA9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59C1642162B39E300ECDEA9 /* Cocoa.framework */; };
-		C59C1645162B3A7500ECDEA9 /* game.c in Sources */ = {isa = PBXBuildFile; fileRef = C59C1644162B3A7500ECDEA9 /* game.c */; };
-		C59C1648162B4B5700ECDEA9 /* vector2.c in Sources */ = {isa = PBXBuildFile; fileRef = C59C1647162B4B5700ECDEA9 /* vector2.c */; };
+		C59C1645162B3A7500ECDEA9 /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C1644162B3A7500ECDEA9 /* GameState.cpp */; };
+		C59C1648162B4B5700ECDEA9 /* vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C1647162B4B5700ECDEA9 /* vector2.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,15 +32,15 @@
 
 /* Begin PBXFileReference section */
 		C59C162E162B380300ECDEA9 /* nuPong */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = nuPong; sourceTree = BUILT_PRODUCTS_DIR; };
-		C59C1632162B380300ECDEA9 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		C59C1632162B380300ECDEA9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C59C1634162B380300ECDEA9 /* nuPong.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = nuPong.1; sourceTree = "<group>"; };
 		C59C163B162B391100ECDEA9 /* libglfw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw.a; path = /usr/local/lib/libglfw.a; sourceTree = "<absolute>"; };
 		C59C163E162B39C900ECDEA9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		C59C1640162B39CE00ECDEA9 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		C59C1642162B39E300ECDEA9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		C59C1644162B3A7500ECDEA9 /* game.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = game.c; sourceTree = "<group>"; };
-		C59C1646162B3B1400ECDEA9 /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
-		C59C1647162B4B5700ECDEA9 /* vector2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vector2.c; sourceTree = "<group>"; };
+		C59C1644162B3A7500ECDEA9 /* GameState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameState.cpp; sourceTree = "<group>"; };
+		C59C1646162B3B1400ECDEA9 /* GameState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
+		C59C1647162B4B5700ECDEA9 /* vector2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vector2.cpp; sourceTree = "<group>"; };
 		C59C1649162B4B5E00ECDEA9 /* vector2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vector2.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,11 +79,11 @@
 		C59C1631162B380300ECDEA9 /* nuPong */ = {
 			isa = PBXGroup;
 			children = (
-				C59C1632162B380300ECDEA9 /* main.c */,
+				C59C1632162B380300ECDEA9 /* main.cpp */,
 				C59C1634162B380300ECDEA9 /* nuPong.1 */,
-				C59C1644162B3A7500ECDEA9 /* game.c */,
-				C59C1646162B3B1400ECDEA9 /* game.h */,
-				C59C1647162B4B5700ECDEA9 /* vector2.c */,
+				C59C1644162B3A7500ECDEA9 /* GameState.cpp */,
+				C59C1646162B3B1400ECDEA9 /* GameState.h */,
+				C59C1647162B4B5700ECDEA9 /* vector2.cpp */,
 				C59C1649162B4B5E00ECDEA9 /* vector2.h */,
 			);
 			path = nuPong;
@@ -151,9 +151,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C59C1633162B380300ECDEA9 /* main.c in Sources */,
-				C59C1645162B3A7500ECDEA9 /* game.c in Sources */,
-				C59C1648162B4B5700ECDEA9 /* vector2.c in Sources */,
+				C59C1633162B380300ECDEA9 /* main.cpp in Sources */,
+				C59C1645162B3A7500ECDEA9 /* GameState.cpp in Sources */,
+				C59C1648162B4B5700ECDEA9 /* vector2.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#include "game.h"
+#include "GameState.h"
 
 #define WINDOW_WIDTH (800.)
 #define WINDOW_HEIGHT (600.)
@@ -21,13 +21,13 @@ void GLFWCALL window_resized(int width, int height) {
     glViewport(0, 0, width, height);
 }
 
-void render(game_t* game) {
+void render(GameState& game) {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
-    game_render(game);
+    game.render();
     glfwSwapBuffers();
 }
 
@@ -60,7 +60,7 @@ int main(void)
 {
     setup();
 
-    game_t* game = game_init();
+    GameState game;
 
     double currentTime = glfwGetTime();
     int running = GL_TRUE;
@@ -73,7 +73,7 @@ int main(void)
         while (frameTime > 0.0)
         {
             const float deltaTime = fmin(frameTime, MAX_DELTA_TIME);
-            game_update(game, deltaTime);
+            game.update(deltaTime);
             frameTime -= deltaTime;
         }
 
