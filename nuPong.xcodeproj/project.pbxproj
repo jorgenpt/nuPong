@@ -14,6 +14,7 @@
 		C59C1641162B39CE00ECDEA9 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59C1640162B39CE00ECDEA9 /* IOKit.framework */; };
 		C59C1643162B39E300ECDEA9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59C1642162B39E300ECDEA9 /* Cocoa.framework */; };
 		C59C1645162B3A7500ECDEA9 /* game.c in Sources */ = {isa = PBXBuildFile; fileRef = C59C1644162B3A7500ECDEA9 /* game.c */; };
+		C59C1648162B4B5700ECDEA9 /* vector2.c in Sources */ = {isa = PBXBuildFile; fileRef = C59C1647162B4B5700ECDEA9 /* vector2.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,8 @@
 		C59C1642162B39E300ECDEA9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C59C1644162B3A7500ECDEA9 /* game.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = game.c; sourceTree = "<group>"; };
 		C59C1646162B3B1400ECDEA9 /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
+		C59C1647162B4B5700ECDEA9 /* vector2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vector2.c; sourceTree = "<group>"; };
+		C59C1649162B4B5E00ECDEA9 /* vector2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vector2.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 				C59C1634162B380300ECDEA9 /* nuPong.1 */,
 				C59C1644162B3A7500ECDEA9 /* game.c */,
 				C59C1646162B3B1400ECDEA9 /* game.h */,
+				C59C1647162B4B5700ECDEA9 /* vector2.c */,
+				C59C1649162B4B5E00ECDEA9 /* vector2.h */,
 			);
 			path = nuPong;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			files = (
 				C59C1633162B380300ECDEA9 /* main.c in Sources */,
 				C59C1645162B3A7500ECDEA9 /* game.c in Sources */,
+				C59C1648162B4B5700ECDEA9 /* vector2.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

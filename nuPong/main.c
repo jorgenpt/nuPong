@@ -21,12 +21,11 @@ void GLFWCALL window_resized(int width, int height) {
     glViewport(0, 0, width, height);
 }
 
-void render(game_data* game) {
+void render(game_t* game) {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    gluLookAt(0, 0, 0, 0, 0, 1, 0, 1, 0);
 
     game_render(game);
     glfwSwapBuffers();
@@ -54,14 +53,14 @@ void setup() {
     glfwSetWindowSizeCallback(&window_resized);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glFrustum(-1., 1., -1., 1., 1., 10.);
+    glOrtho(0., 1., -1., 1., -1., 1.);
 }
 
 int main(void)
 {
     setup();
 
-    game_data* game = game_init();
+    game_t* game = game_init();
 
     double currentTime = glfwGetTime();
     int running = GL_TRUE;

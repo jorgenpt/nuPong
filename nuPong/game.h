@@ -9,10 +9,10 @@
 #ifndef nuPong_game_h
 #define nuPong_game_h
 
-typedef struct game_data game_data;
+typedef struct game_t game_t;
 
-game_data* game_init();
-void game_update(game_data*, float delta);
-void game_render(game_data*);
+game_t* game_init();
+void game_update(game_t*, float delta);
+void game_render(game_t*);
 
 #endif
