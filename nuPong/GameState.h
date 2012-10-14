@@ -9,7 +9,7 @@
 #ifndef nuPong_game_state_h
 #define nuPong_game_state_h
 
-#include "vector2.h"
+#include <Box2D.h>
 
 class GameState {
     class Paddle {
@@ -22,8 +22,8 @@ class GameState {
     class Ball {
     public:
         Ball ();
-        vector2_t position;
-        vector2_t velocity;
+        b2Vec2 position;
+        b2Vec2 velocity;
     };
     
     Paddle paddle;

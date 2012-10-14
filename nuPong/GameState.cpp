@@ -11,7 +11,6 @@
 #include <stdlib.h>
 
 #include "GameState.h"
-#include "vector2.h"
 
 #define GAME_WIDTH 1.
 #define PADDLE_INITIAL_WIDTH 0.2
@@ -33,7 +32,7 @@ GameState::Ball::Ball() {
 }
 
 void GameState::update(float delta) {
-    ball.position = vector2_add(ball.position, vector2_scale(ball.velocity, delta));
+    ball.position += delta * ball.velocity;
     if (ball.position.x >= GAME_WIDTH) {
         ball.position.x = GAME_WIDTH;
         ball.velocity.x = -ball.velocity.x;

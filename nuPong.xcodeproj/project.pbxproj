@@ -7,14 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55FD216592A74512A7FB733F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BB959D9F0D84297B13B4358 /* libPods.a */; };
 		C59C1633162B380300ECDEA9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C1632162B380300ECDEA9 /* main.cpp */; };
 		C59C1635162B380300ECDEA9 /* nuPong.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C59C1634162B380300ECDEA9 /* nuPong.1 */; };
-		C59C163C162B391100ECDEA9 /* libglfw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C59C163B162B391100ECDEA9 /* libglfw.a */; };
 		C59C163F162B39C900ECDEA9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59C163E162B39C900ECDEA9 /* OpenGL.framework */; };
-		C59C1641162B39CE00ECDEA9 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59C1640162B39CE00ECDEA9 /* IOKit.framework */; };
-		C59C1643162B39E300ECDEA9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59C1642162B39E300ECDEA9 /* Cocoa.framework */; };
 		C59C1645162B3A7500ECDEA9 /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C1644162B3A7500ECDEA9 /* GameState.cpp */; };
-		C59C1648162B4B5700ECDEA9 /* vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C1647162B4B5700ECDEA9 /* vector2.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,17 +28,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3BB959D9F0D84297B13B4358 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8287F955550B44058C22A8B1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		C59C162E162B380300ECDEA9 /* nuPong */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = nuPong; sourceTree = BUILT_PRODUCTS_DIR; };
 		C59C1632162B380300ECDEA9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C59C1634162B380300ECDEA9 /* nuPong.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = nuPong.1; sourceTree = "<group>"; };
-		C59C163B162B391100ECDEA9 /* libglfw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw.a; path = /usr/local/lib/libglfw.a; sourceTree = "<absolute>"; };
-		C59C163E162B39C900ECDEA9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		C59C1640162B39CE00ECDEA9 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		C59C1642162B39E300ECDEA9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C59C163E162B39C900ECDEA9 /* OpenGL.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		C59C1644162B3A7500ECDEA9 /* GameState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameState.cpp; sourceTree = "<group>"; };
 		C59C1646162B3B1400ECDEA9 /* GameState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
-		C59C1647162B4B5700ECDEA9 /* vector2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vector2.cpp; sourceTree = "<group>"; };
-		C59C1649162B4B5E00ECDEA9 /* vector2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vector2.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,10 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C59C1643162B39E300ECDEA9 /* Cocoa.framework in Frameworks */,
-				C59C1641162B39CE00ECDEA9 /* IOKit.framework in Frameworks */,
 				C59C163F162B39C900ECDEA9 /* OpenGL.framework in Frameworks */,
-				C59C163C162B391100ECDEA9 /* libglfw.a in Frameworks */,
+				55FD216592A74512A7FB733F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +57,8 @@
 				C59C163D162B391900ECDEA9 /* Libraries */,
 				C59C1631162B380300ECDEA9 /* nuPong */,
 				C59C162F162B380300ECDEA9 /* Products */,
+				8287F955550B44058C22A8B1 /* Pods.xcconfig */,
+				3BB959D9F0D84297B13B4358 /* libPods.a */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,8 +77,6 @@
 				C59C1634162B380300ECDEA9 /* nuPong.1 */,
 				C59C1644162B3A7500ECDEA9 /* GameState.cpp */,
 				C59C1646162B3B1400ECDEA9 /* GameState.h */,
-				C59C1647162B4B5700ECDEA9 /* vector2.cpp */,
-				C59C1649162B4B5E00ECDEA9 /* vector2.h */,
 			);
 			path = nuPong;
 			sourceTree = "<group>";
@@ -92,9 +84,6 @@
 		C59C163D162B391900ECDEA9 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				C59C1642162B39E300ECDEA9 /* Cocoa.framework */,
-				C59C1640162B39CE00ECDEA9 /* IOKit.framework */,
-				C59C163B162B391100ECDEA9 /* libglfw.a */,
 				C59C163E162B39C900ECDEA9 /* OpenGL.framework */,
 			);
 			name = Libraries;
@@ -110,6 +99,7 @@
 				C59C162A162B380300ECDEA9 /* Sources */,
 				C59C162B162B380300ECDEA9 /* Frameworks */,
 				C59C162C162B380300ECDEA9 /* CopyFiles */,
+				E9C9747F841346708449F939 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,6 +136,23 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E9C9747F841346708449F939 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C59C162A162B380300ECDEA9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -153,7 +160,6 @@
 			files = (
 				C59C1633162B380300ECDEA9 /* main.cpp in Sources */,
 				C59C1645162B3A7500ECDEA9 /* GameState.cpp in Sources */,
-				C59C1648162B4B5700ECDEA9 /* vector2.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +223,7 @@
 		};
 		C59C1639162B380300ECDEA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8287F955550B44058C22A8B1 /* Pods.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -224,6 +231,7 @@
 		};
 		C59C163A162B380300ECDEA9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8287F955550B44058C22A8B1 /* Pods.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -248,6 +256,7 @@
 				C59C163A162B380300ECDEA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,14 @@
+
+PODS:
+- box2d (2.3.0)
+- glfw (2.7.6)
+
+DEPENDENCIES:
+- box2d (~> 2.2)
+- glfw (~> 2.7)
+
+SPEC CHECKSUMS:
+  box2d: 091fdf7e8b74bc74f20803734370b8492096ea04
+  glfw: b5d6f45221f9aee008241d2f6c9ca3d137c2be9d
+
+COCOAPODS: 0.15.1
