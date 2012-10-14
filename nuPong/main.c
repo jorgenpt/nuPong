@@ -8,24 +8,58 @@
 
 #include <GL/glfw.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <math.h>
 
 #include "game.h"
 
+#define WINDOW_WIDTH (800.)
+#define WINDOW_HEIGHT (600.)
 #define MAX_DELTA_TIME (1./60.)
 
-int main(void)
-{
+void GLFWCALL window_resized(int width, int height) {
+    glViewport(0, 0, width, height);
+}
+
+void render(game_data* game) {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    gluLookAt(0, 0, 0, 0, 0, 1, 0, 1, 0);
+
+    game_render(game);
+    glfwSwapBuffers();
+}
+
+void check_errors() {
+    GLenum error;
+    while ((error = glGetError()) != GL_NO_ERROR) {
+        fprintf(stderr, "GL error: %s\n", gluErrorString(error));
+    }
+}
+
+void setup() {
     if (!glfwInit())
     {
         exit(EXIT_FAILURE);
     }
 
-    if (!glfwOpenWindow(800, 600, 0, 0, 0, 0, 0, 0, GLFW_WINDOW))
+    if (!glfwOpenWindow(WINDOW_WIDTH, WINDOW_HEIGHT, 0, 0, 0, 0, 0, 0, GLFW_WINDOW))
     {
         glfwTerminate();
         exit(EXIT_FAILURE);
     }
+
+    glfwSetWindowSizeCallback(&window_resized);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glFrustum(-1., 1., -1., 1., 1., 10.);
+}
+
+int main(void)
+{
+    setup();
 
     game_data* game = game_init();
 
@@ -33,10 +67,10 @@ int main(void)
     int running = GL_TRUE;
     while (running)
     {
+        // Semi-fixed delta state update - breaks frametime up into MAX_DELTA_TIME chunks.
         double newTime = glfwGetTime();
         double frameTime = newTime - currentTime;
         currentTime = newTime;
-        
         while (frameTime > 0.0)
         {
             const float deltaTime = fmin(frameTime, MAX_DELTA_TIME);
@@ -44,10 +78,10 @@ int main(void)
             frameTime -= deltaTime;
         }
 
-        glClear(GL_COLOR_BUFFER_BIT);
-        game_render(game);
-        glfwSwapBuffers();
+        render(game);
+        check_errors();
 
+        // Check for exit condition.
         running = !glfwGetKey(GLFW_KEY_ESC) && glfwGetWindowParam(GLFW_OPENED);
     }
 
