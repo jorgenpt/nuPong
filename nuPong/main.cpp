@@ -53,7 +53,7 @@ void setup() {
     glfwSetWindowSizeCallback(&window_resized);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(0., 1., -1., 1., -1., 1.);
+    glOrtho(0., 10., -3.75, 3.75, -1., 1.);
 }
 
 int main(void)

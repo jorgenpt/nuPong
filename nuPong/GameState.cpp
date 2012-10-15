@@ -12,39 +12,49 @@
 
 #include "GameState.h"
 
-#define GAME_WIDTH 1.
-#define PADDLE_INITIAL_WIDTH 0.2
-#define PADDLE_INITIAL_SPEED 0.8
+#define GAME_WIDTH 10.
+#define GAME_HEIGHT_EXTENT 3.75
 
-#define WALL_POSITION 0.95
+#define BALL_RADIUS 0.1
+
+#define PADDLE_INITIAL_WIDTH 2.0
+#define PADDLE_INITIAL_SPEED 8.0
 
 GameState::Paddle::Paddle() :
     location((GAME_WIDTH - PADDLE_INITIAL_WIDTH)/2.),
     speed(PADDLE_INITIAL_SPEED), width(PADDLE_INITIAL_WIDTH)
 { }
 
-GameState::Ball::Ball() {
-    position.x = 0.5;
-    position.y = 0.0;
+GameState::Ball::Ball(b2World& world) {
+    quadric = gluNewQuadric();
 
-    velocity.x = 0.8;
-    velocity.y = 0.8;
+    b2BodyDef bodyDef;
+    bodyDef.type = b2_dynamicBody;
+    bodyDef.position.Set(GAME_WIDTH/2., 0.0f);
+
+    body = world.CreateBody(&bodyDef);
+    body->SetLinearVelocity(b2Vec2(3.8, 3.8));
+
+    b2CircleShape dynamicCircle;
+    dynamicCircle.m_radius = BALL_RADIUS;
+
+    b2FixtureDef fixtureDef;
+    fixtureDef.shape = &dynamicCircle;
+    fixtureDef.density = 1.0f;
+    fixtureDef.friction = 0.;
+    fixtureDef.restitution = 1;
+
+    body->CreateFixture(&fixtureDef);
+}
+
+GameState::GameState() :world(b2Vec2_zero), ball(world) {
+    walls[0] = new Wall(world, b2Vec2(0, GAME_HEIGHT_EXTENT), b2Vec2(0.1, -GAME_HEIGHT_EXTENT));
+    walls[1] = new Wall(world, b2Vec2(GAME_WIDTH - 0.1, GAME_HEIGHT_EXTENT), b2Vec2(GAME_WIDTH, -GAME_HEIGHT_EXTENT));
+    walls[2] = new Wall(world, b2Vec2(0.1, GAME_HEIGHT_EXTENT), b2Vec2(GAME_WIDTH - 0.1, GAME_HEIGHT_EXTENT - 0.1));
 }
 
 void GameState::update(float delta) {
-    ball.position += delta * ball.velocity;
-    if (ball.position.x >= GAME_WIDTH) {
-        ball.position.x = GAME_WIDTH;
-        ball.velocity.x = -ball.velocity.x;
-    } else if (ball.position.x <= 0) {
-        ball.position.x = 0;
-        ball.velocity.x = -ball.velocity.x;
-    }
-
-    if (ball.position.y >= WALL_POSITION) {
-        ball.position.y = WALL_POSITION;
-        ball.velocity.y = -ball.velocity.y;
-    }
+    world.Step(delta, 6, 2);
 
     if (glfwGetKey(GLFW_KEY_LEFT))
     {
@@ -65,28 +75,23 @@ void GameState::update(float delta) {
 
 void GameState::render()
 {
+    glColor3f(0.8, 0.8, 0.9);
+    for (int i = 0; i < sizeof(walls)/sizeof(walls[0]); ++i) {
+        walls[i]->render();
+    }
+
     glLineWidth(2);
     glBegin(GL_LINES);
     {
         glColor3f(1., 0., 0.);
-        glVertex2f(paddle.location, -0.95);
-        glVertex2f(paddle.location + paddle.width, -0.95);
-
-        glColor3f(0.9, 0.9, 0.9);
-        glVertex2f(0.001, WALL_POSITION);
-        glVertex2f(0.999, WALL_POSITION);
-        glVertex2f(0.001, WALL_POSITION);
-        glVertex2f(0.001, -0.95);
-        glVertex2f(0.999, WALL_POSITION);
-        glVertex2f(0.999, -0.95);
+        glVertex2f(paddle.location, -GAME_HEIGHT_EXTENT + 0.5);
+        glVertex2f(paddle.location + paddle.width, -GAME_HEIGHT_EXTENT + 0.5);
     }
     glEnd();
 
-    glPointSize(8.);
-    glBegin(GL_POINTS);
-    {
-        glColor3f(0., 1., 0.);
-        glVertex2f(ball.position.x, ball.position.y);
-    }
-    glEnd();
+    b2Vec2 ballPosition = ball.body->GetPosition();
+    glTranslatef (ballPosition.x, ballPosition.y, 0.0);
+    glColor3f(0., 1., 0.);
+    gluSphere(ball.quadric, BALL_RADIUS, 24, 24);
+
 }

@@ -10,6 +10,7 @@
 #define nuPong_game_state_h
 
 #include <Box2D.h>
+#include "Wall.h"
 
 class GameState {
     class Paddle {
@@ -21,15 +22,18 @@ class GameState {
     };
     class Ball {
     public:
-        Ball ();
-        b2Vec2 position;
-        b2Vec2 velocity;
+        Ball (b2World& world);
+        b2Body *body;
+        GLUquadric *quadric;
     };
-    
+
+    b2World world;
     Paddle paddle;
     Ball ball;
+    Wall* walls[3];
 
 public:
+    GameState();
     void update(float delta);
     void render();
 };
