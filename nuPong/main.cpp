@@ -15,7 +15,6 @@
 
 #define WINDOW_WIDTH (800.)
 #define WINDOW_HEIGHT (600.)
-#define MAX_DELTA_TIME (1./60.)
 
 void GLFWCALL window_resized(int width, int height) {
     glViewport(0, 0, width, height);
@@ -69,16 +68,10 @@ int main(void)
     int running = GL_TRUE;
     while (running)
     {
-        // Semi-fixed delta state update - breaks frametime up into MAX_DELTA_TIME chunks.
         double newTime = glfwGetTime();
         double frameTime = newTime - currentTime;
         currentTime = newTime;
-        while (frameTime > 0.0)
-        {
-            const float deltaTime = fmin(frameTime, MAX_DELTA_TIME);
-            game.update(deltaTime);
-            frameTime -= deltaTime;
-        }
+        game.update(frameTime);
 
         render(game);
         check_errors();
