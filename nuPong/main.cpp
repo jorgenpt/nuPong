@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#include "GameState.h"
+#include "Game.h"
 
 #define WINDOW_WIDTH (800.)
 #define WINDOW_HEIGHT (600.)
@@ -21,7 +21,7 @@ void GLFWCALL window_resized(int width, int height) {
     glViewport(0, 0, width, height);
 }
 
-void render(GameState& game) {
+void render(Game& game) {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glMatrixMode(GL_MODELVIEW);
@@ -62,7 +62,7 @@ int main(void)
 {
     setup();
 
-    GameState game;
+    Game game;
 
     double currentTime = glfwGetTime();
     int running = GL_TRUE;

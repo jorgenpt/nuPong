@@ -11,7 +11,7 @@
 		C59C1633162B380300ECDEA9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C1632162B380300ECDEA9 /* main.cpp */; };
 		C59C1635162B380300ECDEA9 /* nuPong.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C59C1634162B380300ECDEA9 /* nuPong.1 */; };
 		C59C163F162B39C900ECDEA9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59C163E162B39C900ECDEA9 /* OpenGL.framework */; };
-		C59C1645162B3A7500ECDEA9 /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C1644162B3A7500ECDEA9 /* GameState.cpp */; };
+		C59C1645162B3A7500ECDEA9 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C1644162B3A7500ECDEA9 /* Game.cpp */; };
 		C59C169A162B7DCE00ECDEA9 /* Wall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C1698162B7DCE00ECDEA9 /* Wall.cpp */; };
 		C59C16A5162B909500ECDEA9 /* Paddle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C16A3162B909500ECDEA9 /* Paddle.cpp */; };
 /* End PBXBuildFile section */
@@ -36,8 +36,8 @@
 		C59C1632162B380300ECDEA9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C59C1634162B380300ECDEA9 /* nuPong.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = nuPong.1; sourceTree = "<group>"; };
 		C59C163E162B39C900ECDEA9 /* OpenGL.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		C59C1644162B3A7500ECDEA9 /* GameState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameState.cpp; sourceTree = "<group>"; };
-		C59C1646162B3B1400ECDEA9 /* GameState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
+		C59C1644162B3A7500ECDEA9 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		C59C1646162B3B1400ECDEA9 /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		C59C1698162B7DCE00ECDEA9 /* Wall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wall.cpp; sourceTree = "<group>"; };
 		C59C1699162B7DCE00ECDEA9 /* Wall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wall.h; sourceTree = "<group>"; };
 		C59C16A3162B909500ECDEA9 /* Paddle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Paddle.cpp; sourceTree = "<group>"; };
@@ -81,8 +81,8 @@
 			children = (
 				C59C1632162B380300ECDEA9 /* main.cpp */,
 				C59C1634162B380300ECDEA9 /* nuPong.1 */,
-				C59C1644162B3A7500ECDEA9 /* GameState.cpp */,
-				C59C1646162B3B1400ECDEA9 /* GameState.h */,
+				C59C1644162B3A7500ECDEA9 /* Game.cpp */,
+				C59C1646162B3B1400ECDEA9 /* Game.h */,
 				C59C1698162B7DCE00ECDEA9 /* Wall.cpp */,
 				C59C1699162B7DCE00ECDEA9 /* Wall.h */,
 				C59C16A3162B909500ECDEA9 /* Paddle.cpp */,
@@ -169,7 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C59C1633162B380300ECDEA9 /* main.cpp in Sources */,
-				C59C1645162B3A7500ECDEA9 /* GameState.cpp in Sources */,
+				C59C1645162B3A7500ECDEA9 /* Game.cpp in Sources */,
 				C59C169A162B7DCE00ECDEA9 /* Wall.cpp in Sources */,
 				C59C16A5162B909500ECDEA9 /* Paddle.cpp in Sources */,
 			);

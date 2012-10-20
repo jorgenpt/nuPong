@@ -1,5 +1,5 @@
 //
-//  GameState.h
+//  Game.h
 //  nuPong
 //
 //  Created by Jørgen Tjernø on 10/14/12.
@@ -13,7 +13,7 @@
 #include "Wall.h"
 #include "Paddle.h"
 
-class GameState {
+class Game {
     class Ball {
     public:
         Ball (b2World& world);
@@ -28,7 +28,7 @@ class GameState {
     Wall walls[3];
 
 public:
-    GameState();
+    Game();
     void update(float delta);
     void render();
 };

@@ -1,5 +1,5 @@
 //
-//  GameState.c
+//  Game.c
 //  nuPong
 //
 //  Created by Jørgen Tjernø on 10/14/12.
@@ -10,7 +10,7 @@
 
 #include <stdlib.h>
 
-#include "GameState.h"
+#include "Game.h"
 
 #define GAME_WIDTH 10.
 #define GAME_HEIGHT_EXTENT 3.75
@@ -20,7 +20,7 @@
 #define PADDLE_INITIAL_WIDTH 2.0
 #define PADDLE_INITIAL_SPEED 8.0
 
-GameState::Ball::Ball(b2World& world) {
+Game::Ball::Ball(b2World& world) {
     quadric = gluNewQuadric();
 
     b2BodyDef bodyDef;
@@ -44,13 +44,13 @@ GameState::Ball::Ball(b2World& world) {
     ApplyRandomForce (5.);
 }
 
-void GameState::Ball::ApplyRandomForce (float scale) {
+void Game::Ball::ApplyRandomForce (float scale) {
     float angle = rand()/(float)RAND_MAX * 2. * M_PI;
     b2Vec2 vec = b2Rot(angle).GetXAxis();
     body->ApplyLinearImpulse(scale * vec, body->GetPosition());
 }
 
-GameState::GameState() :world(b2Vec2_zero), ball(world) {
+Game::Game() :world(b2Vec2_zero), ball(world) {
     walls[0].setDimensions(world, b2Vec2(0, -GAME_HEIGHT_EXTENT), b2Vec2(0.1, GAME_HEIGHT_EXTENT));
     walls[1].setDimensions(world, b2Vec2(GAME_WIDTH - 0.1, -GAME_HEIGHT_EXTENT), b2Vec2(GAME_WIDTH, GAME_HEIGHT_EXTENT));
     walls[2].setDimensions(world, b2Vec2(0.1, GAME_HEIGHT_EXTENT), b2Vec2(GAME_WIDTH - 0.1, GAME_HEIGHT_EXTENT - 0.1));
@@ -59,7 +59,7 @@ GameState::GameState() :world(b2Vec2_zero), ball(world) {
                         b2Vec2((GAME_WIDTH + PADDLE_INITIAL_WIDTH)/2., -GAME_HEIGHT_EXTENT + 0.25));
 }
 
-void GameState::update(float delta) {
+void Game::update(float delta) {
     world.Step(delta, 8, 3);
     paddle.update(delta);
 
@@ -72,7 +72,7 @@ void GameState::update(float delta) {
     }
 }
 
-void GameState::render()
+void Game::render()
 {
     glColor3f(0.8, 0.8, 0.9);
     for (int i = 0; i < sizeof(walls)/sizeof(walls[0]); ++i) {
