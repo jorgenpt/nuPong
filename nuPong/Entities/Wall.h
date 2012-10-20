@@ -13,7 +13,7 @@
 
 #include <OpenGL/OpenGL.h>
 
-class Wall : public IStaticEntity {
+class Wall : public StaticEntity {
     GLuint vertexVboId, indexVboId;
     b2Body* body;
     b2Body* createBoxBody(b2World& world, b2Vec2 topLeft, b2Vec2 bottomRight);
@@ -21,7 +21,6 @@ class Wall : public IStaticEntity {
 public:
     Wall(b2World& world, b2Vec2 topLeft, b2Vec2 bottomRight);
     void render();
-    virtual void update(float) {};
 };
 
 #endif /* defined(__nuPong__Wall__) */

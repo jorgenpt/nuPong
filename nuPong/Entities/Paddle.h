@@ -13,7 +13,7 @@
 
 #include <OpenGL/OpenGL.h>
 
-class Paddle : public IDynamicEntity {
+class Paddle : public Entity {
     GLuint vertexVboId, indexVboId;
     b2Body* body;
     b2Body* createBoxBody(b2World& world, b2Vec2 topLeft, b2Vec2 bottomRight);

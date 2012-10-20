@@ -13,7 +13,7 @@
 
 #include <OpenGL/glu.h>
 
-class Ball : public IDynamicEntity {
+class Ball : public Entity {
     b2Body *body;
     GLUquadric *quadric;
 
