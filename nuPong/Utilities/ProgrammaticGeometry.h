@@ -14,6 +14,11 @@
 
 struct ProgrammaticGeometry {
     static void uploadBox (GLuint& vboId, GLuint& indexId, b2Vec3 extents);
+
+private:
+    static unsigned short* createTrianglesForQuad (unsigned short topLeft, unsigned short bottomLeft,
+                                                   unsigned short bottomRight, unsigned short topRight,
+                                                   unsigned short* indices);
 };
 
 #endif /* defined(__nuPong__ProgrammaticGeometry__) */
