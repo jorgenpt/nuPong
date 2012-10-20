@@ -9,28 +9,30 @@
 #ifndef nuPong_game_state_h
 #define nuPong_game_state_h
 
-#include <Box2D.h>
-#include "Wall.h"
-#include "Paddle.h"
+#include "Physics.h"
+
+#include "IStaticEntity.h"
+#include "IDynamicEntity.h"
+
+#include <list>
 
 class Game {
-    class Ball {
-    public:
-        Ball (b2World& world);
-        void ApplyRandomForce (float scale);
-        b2Body *body;
-        GLUquadric *quadric;
-    };
+    static Game gameInstance;
 
-    b2World world;
-    Paddle paddle;
-    Ball ball;
-    Wall walls[3];
+    std::list<IDynamicEntity*> dynamicEntities;
+    std::list<IStaticEntity*> staticEntities;
+    Physics physics;
+
+    Game();
 
 public:
-    Game();
+    static Game& getInstance();
+
+    void initialize();
     void update(float delta);
     void render();
+
+    static b2Vec2 getSize() { return b2Vec2(10., 7.5); }
 };
 
 #endif

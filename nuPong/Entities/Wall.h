@@ -9,19 +9,17 @@
 #ifndef __nuPong__Wall__
 #define __nuPong__Wall__
 
-#include <Box2D.h>
+#include "Game.h"
+
 #include <OpenGL/OpenGL.h>
 
-class Wall {
+class Wall : public IStaticEntity {
     GLuint vertexVboId, indexVboId;
-
-protected:
     b2Body* body;
-    virtual b2Body* createBoxBody(b2World& world, b2Vec2 topLeft, b2Vec2 bottomRight);
+    b2Body* createBoxBody(b2World& world, b2Vec2 topLeft, b2Vec2 bottomRight);
 
 public:
-    b2Body* getBody() { return body; }
-    void setDimensions(b2World& world, b2Vec2 topLeft, b2Vec2 bottomRight);
+    Wall(b2World& world, b2Vec2 topLeft, b2Vec2 bottomRight);
     void render();
     virtual void update(float) {};
 };

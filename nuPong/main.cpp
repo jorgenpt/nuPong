@@ -55,14 +55,15 @@ void setup() {
     glfwSetWindowSizeCallback(&window_resized);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(0., 10., -3.75, 3.75, -1., 1.);
+    glOrtho(0., 10., 0., 7.5, -1., 1.);
 }
 
 int main(void)
 {
     setup();
 
-    Game game;
+    Game& game = Game::getInstance();
+    game.initialize();
 
     double currentTime = glfwGetTime();
     int running = GL_TRUE;
