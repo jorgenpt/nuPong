@@ -20,56 +20,55 @@
 #define PADDLE_INITIAL_WIDTH 2.0
 #define PADDLE_INITIAL_SPEED 8.0
 
-GameState::Paddle::Paddle() :
-    location((GAME_WIDTH - PADDLE_INITIAL_WIDTH)/2.),
-    speed(PADDLE_INITIAL_SPEED), width(PADDLE_INITIAL_WIDTH)
-{ }
-
 GameState::Ball::Ball(b2World& world) {
     quadric = gluNewQuadric();
 
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
     bodyDef.position.Set(GAME_WIDTH/2., 0.0f);
+    bodyDef.bullet = true;
 
     body = world.CreateBody(&bodyDef);
-    body->SetLinearVelocity(b2Vec2(3.8, 3.8));
 
     b2CircleShape dynamicCircle;
     dynamicCircle.m_radius = BALL_RADIUS;
 
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &dynamicCircle;
-    fixtureDef.density = 1.0f;
     fixtureDef.friction = 0.;
     fixtureDef.restitution = 1;
 
     body->CreateFixture(&fixtureDef);
+    body->ResetMassData();
+
+    ApplyRandomForce (5.);
+}
+
+void GameState::Ball::ApplyRandomForce (float scale) {
+    float angle = rand()/(float)RAND_MAX * 2. * M_PI;
+    b2Vec2 vec = b2Rot(angle).GetXAxis();
+    body->ApplyLinearImpulse(scale * vec, body->GetPosition());
 }
 
 GameState::GameState() :world(b2Vec2_zero), ball(world) {
-    walls[0] = new Wall(world, b2Vec2(0, GAME_HEIGHT_EXTENT), b2Vec2(0.1, -GAME_HEIGHT_EXTENT));
-    walls[1] = new Wall(world, b2Vec2(GAME_WIDTH - 0.1, GAME_HEIGHT_EXTENT), b2Vec2(GAME_WIDTH, -GAME_HEIGHT_EXTENT));
-    walls[2] = new Wall(world, b2Vec2(0.1, GAME_HEIGHT_EXTENT), b2Vec2(GAME_WIDTH - 0.1, GAME_HEIGHT_EXTENT - 0.1));
+    walls[0].setDimensions(world, b2Vec2(0, -GAME_HEIGHT_EXTENT), b2Vec2(0.1, GAME_HEIGHT_EXTENT));
+    walls[1].setDimensions(world, b2Vec2(GAME_WIDTH - 0.1, -GAME_HEIGHT_EXTENT), b2Vec2(GAME_WIDTH, GAME_HEIGHT_EXTENT));
+    walls[2].setDimensions(world, b2Vec2(0.1, GAME_HEIGHT_EXTENT), b2Vec2(GAME_WIDTH - 0.1, GAME_HEIGHT_EXTENT - 0.1));
+
+    paddle.setDimensions(world, b2Vec2((GAME_WIDTH - PADDLE_INITIAL_WIDTH)/2., -GAME_HEIGHT_EXTENT + 0.5),
+                        b2Vec2((GAME_WIDTH + PADDLE_INITIAL_WIDTH)/2., -GAME_HEIGHT_EXTENT + 0.25));
 }
 
 void GameState::update(float delta) {
-    world.Step(delta, 6, 2);
+    world.Step(delta, 8, 3);
+    paddle.update(delta);
 
-    if (glfwGetKey(GLFW_KEY_LEFT))
+    b2Vec2 pos = ball.body->GetPosition();
+    if (pos.y < -GAME_HEIGHT_EXTENT)
     {
-        paddle.location -= (paddle.speed * delta);
-        if (paddle.location < 0.) {
-            paddle.location = 0.;
-        }
-    }
-
-    if (glfwGetKey(GLFW_KEY_RIGHT))
-    {
-        paddle.location += (paddle.speed * delta);
-        if (paddle.location + paddle.width > GAME_WIDTH) {
-            paddle.location = GAME_WIDTH - paddle.width;
-        }
+        ball.body->SetTransform(b2Vec2(GAME_WIDTH/2., 0.), ball.body->GetAngle());
+        ball.body->SetLinearVelocity(b2Vec2_zero);
+        ball.ApplyRandomForce(5.);
     }
 }
 
@@ -77,18 +76,13 @@ void GameState::render()
 {
     glColor3f(0.8, 0.8, 0.9);
     for (int i = 0; i < sizeof(walls)/sizeof(walls[0]); ++i) {
-        walls[i]->render();
+        walls[i].render();
     }
 
-    glLineWidth(2);
-    glBegin(GL_LINES);
-    {
-        glColor3f(1., 0., 0.);
-        glVertex2f(paddle.location, -GAME_HEIGHT_EXTENT + 0.5);
-        glVertex2f(paddle.location + paddle.width, -GAME_HEIGHT_EXTENT + 0.5);
-    }
-    glEnd();
+    glColor3f(0.9, 0.9, 1.0);
+    paddle.render();
 
+    glLoadIdentity();
     b2Vec2 ballPosition = ball.body->GetPosition();
     glTranslatef (ballPosition.x, ballPosition.y, 0.0);
     glColor3f(0., 1., 0.);

@@ -13,15 +13,17 @@
 #include <OpenGL/OpenGL.h>
 
 class Wall {
-    b2Body* body;
     GLuint vertexVboId, indexVboId;
 
 protected:
-    b2Body* createBoxBody(b2World& world, b2Vec2 topLeft, b2Vec2 bottomRight);
+    b2Body* body;
+    virtual b2Body* createBoxBody(b2World& world, b2Vec2 topLeft, b2Vec2 bottomRight);
 
 public:
-    Wall(b2World& world, b2Vec2 topLeft, b2Vec2 bottomRight);
+    b2Body* getBody() { return body; }
+    void setDimensions(b2World& world, b2Vec2 topLeft, b2Vec2 bottomRight);
     void render();
+    virtual void update(float) {};
 };
 
 #endif /* defined(__nuPong__Wall__) */

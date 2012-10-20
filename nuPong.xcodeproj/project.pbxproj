@@ -13,6 +13,7 @@
 		C59C163F162B39C900ECDEA9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59C163E162B39C900ECDEA9 /* OpenGL.framework */; };
 		C59C1645162B3A7500ECDEA9 /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C1644162B3A7500ECDEA9 /* GameState.cpp */; };
 		C59C169A162B7DCE00ECDEA9 /* Wall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C1698162B7DCE00ECDEA9 /* Wall.cpp */; };
+		C59C16A5162B909500ECDEA9 /* Paddle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C16A3162B909500ECDEA9 /* Paddle.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,8 @@
 		C59C1646162B3B1400ECDEA9 /* GameState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
 		C59C1698162B7DCE00ECDEA9 /* Wall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wall.cpp; sourceTree = "<group>"; };
 		C59C1699162B7DCE00ECDEA9 /* Wall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wall.h; sourceTree = "<group>"; };
+		C59C16A3162B909500ECDEA9 /* Paddle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Paddle.cpp; sourceTree = "<group>"; };
+		C59C16A4162B909500ECDEA9 /* Paddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paddle.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 				C59C1646162B3B1400ECDEA9 /* GameState.h */,
 				C59C1698162B7DCE00ECDEA9 /* Wall.cpp */,
 				C59C1699162B7DCE00ECDEA9 /* Wall.h */,
+				C59C16A3162B909500ECDEA9 /* Paddle.cpp */,
+				C59C16A4162B909500ECDEA9 /* Paddle.h */,
 			);
 			path = nuPong;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 				C59C1633162B380300ECDEA9 /* main.cpp in Sources */,
 				C59C1645162B3A7500ECDEA9 /* GameState.cpp in Sources */,
 				C59C169A162B7DCE00ECDEA9 /* Wall.cpp in Sources */,
+				C59C16A5162B909500ECDEA9 /* Paddle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,18 +11,13 @@
 
 #include <Box2D.h>
 #include "Wall.h"
+#include "Paddle.h"
 
 class GameState {
-    class Paddle {
-    public:
-        Paddle ();
-        float location;
-        float speed;
-        float width;
-    };
     class Ball {
     public:
         Ball (b2World& world);
+        void ApplyRandomForce (float scale);
         b2Body *body;
         GLUquadric *quadric;
     };
@@ -30,7 +25,7 @@ class GameState {
     b2World world;
     Paddle paddle;
     Ball ball;
-    Wall* walls[3];
+    Wall walls[3];
 
 public:
     GameState();

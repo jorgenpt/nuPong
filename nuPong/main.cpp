@@ -39,6 +39,8 @@ void check_errors() {
 }
 
 void setup() {
+    srand((unsigned)time(NULL));
+
     if (!glfwInit())
     {
         exit(EXIT_FAILURE);
