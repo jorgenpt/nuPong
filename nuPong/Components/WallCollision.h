@@ -11,8 +11,12 @@
 
 #include "Component.h"
 
+#include "BoxRenderer.h"
+
 struct WallCollision : Component
 {
+    BoxRenderer *renderer;
+
     WallCollision(Entity& owner) : Component(owner) {}
     void initialize();
 };

@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+#include <unistd.h>
 
 #include "Game.h"
 
@@ -50,6 +51,10 @@ void setup() {
         glfwTerminate();
         exit(EXIT_FAILURE);
     }
+
+    char *pwd = getcwd(NULL, 0);
+    printf("%s\n", pwd);
+    free(pwd);
 
     glfwSetWindowTitle("nuPong");
 

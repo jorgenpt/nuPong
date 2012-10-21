@@ -10,6 +10,7 @@
 
 #include "BoxRenderer.h"
 #include "WallCollision.h"
+#include "Material.h"
 
 Wall::Wall(b2World& world, b2Vec2 topLeft, b2Vec2 bottomRight)
 {
@@ -22,7 +23,8 @@ Wall::Wall(b2World& world, b2Vec2 topLeft, b2Vec2 bottomRight)
     // TODO: Reorganize this too.
     body->SetUserData(this);
 
-    addComponent(new BoxRenderer(*this, b2Vec3(extents.x, extents.y, 0.5)));
+    Material *m = new Material("blink.vert", "blink.frag");
+    addComponent(new BoxRenderer(*this, b2Vec3(extents.x, extents.y, 0.5), m));
     addComponent(new WallCollision(*this));
 }
 

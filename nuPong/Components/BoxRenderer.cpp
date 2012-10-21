@@ -12,9 +12,17 @@
 #include "ProgrammaticGeometry.h"
 
 
-BoxRenderer::BoxRenderer (Entity& owner, const b2Vec3& extents) : Component(owner)
+BoxRenderer::BoxRenderer (Entity& owner, const b2Vec3& extents, Material *material_)
+    : Component(owner), blink(false), material(material_)
 {
     ProgrammaticGeometry::uploadBox(vertexBufferId, indexBufferId, extents);
+    if (material)
+        material->setUniform("blink_t", 2.);
+}
+
+BoxRenderer::~BoxRenderer ()
+{
+    delete material;
 }
 
 void BoxRenderer::render() const
@@ -24,6 +32,9 @@ void BoxRenderer::render() const
         // TODO: Log error.
         return;
     }
+
+    if (material)
+        material->apply();
 
     const b2Vec2 position = body->GetPosition();
     glLoadIdentity();
@@ -36,4 +47,29 @@ void BoxRenderer::render() const
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferId);
     glDrawElements(GL_TRIANGLES, 12, GL_UNSIGNED_SHORT, 0);
+
+    if (material)
+        Material::deactivate();
+}
+
+void BoxRenderer::update(float delta)
+{
+    // XXX: Ugh. This depends on a "correct" material being passed in.
+    if (blink) {
+        double timePassed = glfwGetTime() - blinkStart;
+        material->setUniform("blink_t", timePassed);
+        if (timePassed > 1.) {
+            blink = false;
+        }
+    }
+}
+
+void BoxRenderer::startBlinkAt(b2Vec2 position)
+{
+    if (material != NULL) {
+        blink = true;
+        printf("%f", position.y);
+        material->setUniform("blink_y", position.y);
+        blinkStart = glfwGetTime();
+    }
 }

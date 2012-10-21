@@ -47,6 +47,9 @@ Material::Material(const std::string& vertexShaderPath, const std::string& fragm
 
 Material::~Material()
 {
+    if (activeProgram == programHandle)
+        deactivate();
+
     glDeleteProgram(programHandle);
 }
 

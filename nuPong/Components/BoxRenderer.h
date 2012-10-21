@@ -14,14 +14,22 @@
 #include <Box2D.h>
 #include <OpenGL/OpenGL.h>
 
+#include "Material.h"
+
 struct BoxRenderer : public Component
 {
+    Material *material;
     GLuint vertexBufferId, indexBufferId;
+    bool blink;
+    double blinkStart;
 
-    BoxRenderer (Entity& owner, const b2Vec3& extents);
+    BoxRenderer (Entity& owner, const b2Vec3& extents, Material *material = NULL);
+    ~BoxRenderer ();
 
-    void update(float delta) {}
+    void update(float delta);
     void render() const;
+
+    void startBlinkAt(b2Vec2 position);
 };
 
 #endif /* defined(__nuPong__BoxRenderer__) */
