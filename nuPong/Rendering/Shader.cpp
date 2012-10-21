@@ -34,8 +34,12 @@ GLuint Shader::load(GLenum type, const std::string& source)
     glCompileShader(handle);
 
     // Print compilation log.
-    std::cout << "Compilation results:" << std::endl;
-    std::cout << getLog(handle) << std::endl;
+    std::string log = getLog(handle);
+    if (!log.empty())
+    {
+        std::cout << "Compilation results:" << std::endl;
+        std::cout << log << std::endl;
+    }
 
     // Clean up handle if it failed.
     GLint compileStatus;

@@ -22,9 +22,9 @@ Material::Material(const std::string& vertexShaderPath, const std::string& fragm
     Shader *vertexShader = NULL, *fragmentShader = NULL;
 
     if (vertexShaderPath.length() > 0)
-        vertexShader = loadShader(GL_VERTEX_SHADER, vertexShaderPath);
+        vertexShader = loadShader(GL_VERTEX_SHADER, "Shaders/" + vertexShaderPath);
     if (fragmentShaderPath.length() > 0)
-        fragmentShader = loadShader(GL_FRAGMENT_SHADER, fragmentShaderPath);
+        fragmentShader = loadShader(GL_FRAGMENT_SHADER, "Shaders/" + fragmentShaderPath);
 
     if (vertexShader && vertexShader->getType() != GL_VERTEX_SHADER)
     {
@@ -73,8 +73,12 @@ GLuint Material::link(const Shader* vertexShader, const Shader* fragmentShader)
     glLinkProgram(handle);
 
     // Print link log.
-    std::cout << "Linking results:" << std::endl;
-    std::cout << getLog(handle) << std::endl;
+    std::string log = getLog(handle);
+    if (!log.empty())
+    {
+        std::cout << "Linking results:" << std::endl;
+        std::cout << log << std::endl;
+    }
 
     // Clean up handle if it failed.
     GLint linkStatus;
