@@ -14,6 +14,7 @@
 
 #include "Ball.h"
 #include "Paddle.h"
+#include "AutoPaddle.h"
 #include "Wall.h"
 
 #define PADDLE_INITIAL_WIDTH 2.0
@@ -33,10 +34,13 @@ void Game::initialize() {
 
     staticEntities.push_back(new Wall(world, b2Vec2(0.,           size.y), b2Vec2(0.1,          0.)));
     staticEntities.push_back(new Wall(world, b2Vec2(size.x - 0.1, size.y), b2Vec2(size.x,       0.)));
-    staticEntities.push_back(new Wall(world, b2Vec2(0.1,          size.y), b2Vec2(size.x - 0.1, size.y - 0.1)));
 
-    dynamicEntities.push_back(new Ball(world));
+    Ball *ball = new Ball(world);
+    ball->setName("ball");
+
+    dynamicEntities.push_back(ball);
     dynamicEntities.push_back(new Paddle(world, PADDLE_INITIAL_WIDTH));
+    dynamicEntities.push_back(new AutoPaddle(world, PADDLE_INITIAL_WIDTH));
 }
 
 void Game::update(float delta) {

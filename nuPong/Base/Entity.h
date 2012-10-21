@@ -18,17 +18,14 @@
 class Component;
 
 class Entity {
-    friend class Component;
-
     std::string mName;
     std::set<std::string> mTags;
 
     std::list<Component*> mComponents;
 
-protected:
+public:
     b2Body* body;
 
-public:
     Entity();
     ~Entity();
     void update(float delta);

@@ -12,8 +12,10 @@
 #include "Entity.h"
 
 class Paddle : public Entity {
+protected:
     b2Body* createBoxBody(b2World& world, b2Vec2 topLeft, b2Vec2 bottomRight);
 public:
+    Paddle() {}
     Paddle(b2World& world, float width);
     float getHeight() const { return 0.25; }
 };
