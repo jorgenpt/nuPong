@@ -42,6 +42,7 @@ public:
 
     // Entity registration
     void setName(const std::string& name);
+    const std::string& getName() const;
     void addTag(const std::string& tag);
     void removeTag(const std::string& tag);
 };

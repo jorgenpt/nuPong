@@ -59,6 +59,11 @@ void Entity::setName(const std::string& name)
     mName = name;
 }
 
+const std::string& Entity::getName() const
+{
+    return mName;
+}
+
 void Entity::addTag(const std::string& tag)
 {
     if (mTags.count(tag) > 0)

@@ -51,7 +51,7 @@ void BallMechanics::update(float delta) {
     }
 
     b2Vec2 pos = body->GetPosition();
-    if (pos.y < 0.)
+    if (pos.y < 0. || pos.y > Game::getInstance().getSize().y)
     {
         resetPosition();
         body->SetLinearVelocity(b2Vec2_zero);

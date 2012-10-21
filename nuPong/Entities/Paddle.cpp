@@ -25,6 +25,9 @@ Paddle::Paddle(b2World& world, float width)
     // TODO: Move the creation of the b2Body into a component.
     body = createBoxBody (world, origin, extents);
 
+    // TODO: Reorganize this too.
+    body->SetUserData(this);
+
     addComponent(new BoxRenderer(*this, b2Vec3(extents.x, extents.y, 0.5)));
     addComponent(new PlayerInputHandler(*this, PADDLE_INITIAL_SPEED));
 }

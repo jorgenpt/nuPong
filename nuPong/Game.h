@@ -36,6 +36,8 @@ public:
     void render();
 
     // Game state
+    Physics& getPhysics() { return physics; }
+    
     void setEntityName(Entity* entity, const std::string& name);
     void removeEntityName(Entity* entity, const std::string& name);
     Entity* getEntityWithName(const std::string& name) const;

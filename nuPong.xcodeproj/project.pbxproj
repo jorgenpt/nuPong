@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		55FD216592A74512A7FB733F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BB959D9F0D84297B13B4358 /* libPods.a */; };
+		C52C77FB1633BC7F009441EA /* Physics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C52C77F91633BC7F009441EA /* Physics.cpp */; };
+		C52C77FE1633BD9F009441EA /* CollisionHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C52C77FC1633BD9F009441EA /* CollisionHandler.cpp */; };
+		C52C78011633C10C009441EA /* WallCollision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C52C77FF1633C10C009441EA /* WallCollision.cpp */; };
 		C59C1633162B380300ECDEA9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C1632162B380300ECDEA9 /* main.cpp */; };
 		C59C1635162B380300ECDEA9 /* nuPong.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C59C1634162B380300ECDEA9 /* nuPong.1 */; };
 		C59C163F162B39C900ECDEA9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59C163E162B39C900ECDEA9 /* OpenGL.framework */; };
 		C59C1645162B3A7500ECDEA9 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C1644162B3A7500ECDEA9 /* Game.cpp */; };
-		C5E4BDA616333DD8006B3728 /* Physics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDA416333DD8006B3728 /* Physics.cpp */; };
 		C5E4BDB616333FDE006B3728 /* Paddle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDB216333FDE006B3728 /* Paddle.cpp */; };
 		C5E4BDB716333FDE006B3728 /* Wall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDB416333FDE006B3728 /* Wall.cpp */; };
 		C5E4BDBB16334081006B3728 /* ProgrammaticGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDB916334081006B3728 /* ProgrammaticGeometry.cpp */; };
@@ -42,14 +44,18 @@
 /* Begin PBXFileReference section */
 		3BB959D9F0D84297B13B4358 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8287F955550B44058C22A8B1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		C52C77F91633BC7F009441EA /* Physics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physics.cpp; sourceTree = "<group>"; };
+		C52C77FA1633BC7F009441EA /* Physics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Physics.h; sourceTree = "<group>"; };
+		C52C77FC1633BD9F009441EA /* CollisionHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CollisionHandler.cpp; sourceTree = "<group>"; };
+		C52C77FD1633BD9F009441EA /* CollisionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionHandler.h; sourceTree = "<group>"; };
+		C52C77FF1633C10C009441EA /* WallCollision.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WallCollision.cpp; sourceTree = "<group>"; };
+		C52C78001633C10C009441EA /* WallCollision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallCollision.h; sourceTree = "<group>"; };
 		C59C162E162B380300ECDEA9 /* nuPong */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = nuPong; sourceTree = BUILT_PRODUCTS_DIR; };
 		C59C1632162B380300ECDEA9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C59C1634162B380300ECDEA9 /* nuPong.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = nuPong.1; sourceTree = "<group>"; };
 		C59C163E162B39C900ECDEA9 /* OpenGL.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		C59C1644162B3A7500ECDEA9 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		C59C1646162B3B1400ECDEA9 /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
-		C5E4BDA416333DD8006B3728 /* Physics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physics.cpp; sourceTree = "<group>"; };
-		C5E4BDA516333DD8006B3728 /* Physics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Physics.h; sourceTree = "<group>"; };
 		C5E4BDB216333FDE006B3728 /* Paddle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Paddle.cpp; sourceTree = "<group>"; };
 		C5E4BDB316333FDE006B3728 /* Paddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paddle.h; sourceTree = "<group>"; };
 		C5E4BDB416333FDE006B3728 /* Wall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wall.cpp; sourceTree = "<group>"; };
@@ -90,6 +96,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C52C77F81633BC7F009441EA /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				C52C77FC1633BD9F009441EA /* CollisionHandler.cpp */,
+				C52C77FD1633BD9F009441EA /* CollisionHandler.h */,
+				C52C77F91633BC7F009441EA /* Physics.cpp */,
+				C52C77FA1633BC7F009441EA /* Physics.h */,
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
 		C59C1623162B380300ECDEA9 = {
 			isa = PBXGroup;
 			children = (
@@ -115,13 +132,12 @@
 				C5E4BDC616335ADA006B3728 /* Base */,
 				C5E4BDD016336977006B3728 /* Components */,
 				C5E4BDB116333FDE006B3728 /* Entities */,
+				C52C77F81633BC7F009441EA /* Physics */,
 				C5E4BDB81633406C006B3728 /* Utilities */,
 				C59C1632162B380300ECDEA9 /* main.cpp */,
 				C59C1634162B380300ECDEA9 /* nuPong.1 */,
 				C59C1644162B3A7500ECDEA9 /* Game.cpp */,
 				C59C1646162B3B1400ECDEA9 /* Game.h */,
-				C5E4BDA416333DD8006B3728 /* Physics.cpp */,
-				C5E4BDA516333DD8006B3728 /* Physics.h */,
 			);
 			path = nuPong;
 			sourceTree = "<group>";
@@ -183,6 +199,8 @@
 				C5E4BDD516336CB8006B3728 /* PlayerInputHandler.h */,
 				C5E4BDD716336F28006B3728 /* SphereRenderer.cpp */,
 				C5E4BDD816336F28006B3728 /* SphereRenderer.h */,
+				C52C77FF1633C10C009441EA /* WallCollision.cpp */,
+				C52C78001633C10C009441EA /* WallCollision.h */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -258,7 +276,6 @@
 			files = (
 				C59C1633162B380300ECDEA9 /* main.cpp in Sources */,
 				C59C1645162B3A7500ECDEA9 /* Game.cpp in Sources */,
-				C5E4BDA616333DD8006B3728 /* Physics.cpp in Sources */,
 				C5E4BDB616333FDE006B3728 /* Paddle.cpp in Sources */,
 				C5E4BDB716333FDE006B3728 /* Wall.cpp in Sources */,
 				C5E4BDBB16334081006B3728 /* ProgrammaticGeometry.cpp in Sources */,
@@ -270,6 +287,9 @@
 				C5E4BDD916336F28006B3728 /* SphereRenderer.cpp in Sources */,
 				C5E4BDDC16336F5D006B3728 /* BallMechanics.cpp in Sources */,
 				C5E4BDDF16337EAA006B3728 /* BallFollower.cpp in Sources */,
+				C52C77FB1633BC7F009441EA /* Physics.cpp in Sources */,
+				C52C77FE1633BD9F009441EA /* CollisionHandler.cpp in Sources */,
+				C52C78011633C10C009441EA /* WallCollision.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

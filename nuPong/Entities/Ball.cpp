@@ -33,6 +33,9 @@ Ball::Ball(b2World& world) {
     body->CreateFixture(&fixtureDef);
     body->ResetMassData();
 
+    // TODO: Reorganize this too.
+    body->SetUserData(this);
+
     addComponent(new SphereRenderer(*this, BALL_RADIUS));
     addComponent(new BallMechanics(*this, BALL_SPEED));
 }

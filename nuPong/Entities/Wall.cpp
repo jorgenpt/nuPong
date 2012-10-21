@@ -9,6 +9,7 @@
 #include "Wall.h"
 
 #include "BoxRenderer.h"
+#include "WallCollision.h"
 
 Wall::Wall(b2World& world, b2Vec2 topLeft, b2Vec2 bottomRight)
 {
@@ -18,7 +19,11 @@ Wall::Wall(b2World& world, b2Vec2 topLeft, b2Vec2 bottomRight)
     // TODO: Move the creation of the b2Body into a component.
     body = createBoxBody (world, origin, extents);
 
+    // TODO: Reorganize this too.
+    body->SetUserData(this);
+
     addComponent(new BoxRenderer(*this, b2Vec3(extents.x, extents.y, 0.5)));
+    addComponent(new WallCollision(*this));
 }
 
 b2Body* Wall::createBoxBody(b2World& world, b2Vec2 origin, b2Vec2 extents)

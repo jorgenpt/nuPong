@@ -18,7 +18,6 @@ struct BallMechanics : public Component
     float mSpeed;
 
     void update(float delta);
-    void render() const {}
 
     void resetPosition();
     void applyRandomForce(float scale);

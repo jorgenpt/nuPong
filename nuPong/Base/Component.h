@@ -18,8 +18,8 @@ public:
     virtual ~Component() {}
 
     virtual void initialize() {}
-    virtual void render() const = 0;
-    virtual void update(float delta) = 0;
+    virtual void render() const {};
+    virtual void update(float delta) {};
 
     Entity& getEntity();
     void setBody(b2Body* body);

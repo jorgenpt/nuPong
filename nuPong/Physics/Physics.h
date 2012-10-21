@@ -9,11 +9,18 @@
 #ifndef __nuPong__Physics__
 #define __nuPong__Physics__
 
+#include <map>
+#include <list>
+
 #include <Box2D.h>
+#include <Component.h>
+
+#include "CollisionHandler.h"
 
 class Physics {
     b2World world;
     double accumulator;
+    CollisionHandler handler;
 
 public:
     Physics();
@@ -23,6 +30,8 @@ public:
     float getStepSize() const { return 1./60.; }
     int getVelocitySolverIterations() const { return 8; }
     int getPositionSolverIterations() const { return 3; }
+
+    void collisionHandler(Component *component, CollisionHandler::Handler function);
 };
 
 #endif /* defined(__nuPong__Physics__) */
