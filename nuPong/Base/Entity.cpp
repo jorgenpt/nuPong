@@ -74,3 +74,16 @@ void Entity::update(float delta)
     for (auto it = mComponents.begin(); it != mComponents.end(); ++it)
         (*it)->update(delta);
 }
+
+b2AABB Entity::getAABB () const
+{
+    b2AABB aabb;
+    aabb.lowerBound = b2Vec2(FLT_MAX,FLT_MAX);
+    aabb.upperBound = b2Vec2(-FLT_MAX,-FLT_MAX);
+
+    for (b2Fixture* fixture = body->GetFixtureList(); fixture != NULL; fixture = fixture->GetNext ()) {
+        aabb.Combine(aabb, fixture->GetAABB(0));
+    }
+
+    return aabb;
+}

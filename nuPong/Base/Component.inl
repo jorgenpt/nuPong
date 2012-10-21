@@ -1,20 +1,24 @@
+inline Entity& Component::getEntity()
+{
+    return mOwner;
+}
+
+inline b2Body* Component::getBody()
+{
+    return mOwner.body;
+}
+
+inline void Component::setBody(b2Body* body)
+{
+    mOwner.body = body;
+}
+
 template<typename T>
-T* Component::getComponent() const {
+inline T* Component::getComponent() const {
     return mOwner.getComponent<T>();
 }
 
-template<typename T>
-void Component::createComponent()
-{
-     mOwner.createComponent<T>();
-}
-
-void Component::addComponent(Component *component)
+inline void Component::addComponent(Component *component)
 {
     mOwner.addComponent(component);
-}
-
-Entity& Component::getEntity()
-{
-    return mOwner;
 }

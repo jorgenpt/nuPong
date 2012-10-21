@@ -13,17 +13,8 @@
 
 #include <OpenGL/glu.h>
 
-class Ball : public Entity {
-    b2Body *body;
-    GLUquadric *quadric;
-
-    void applyRandomForce (float scale);
-    b2Vec2 getStartingPosition() const;
-public:
+struct Ball : public Entity {
     Ball (b2World& world);
-
-    virtual void render();
-    virtual void update(float delta);
 };
 
 

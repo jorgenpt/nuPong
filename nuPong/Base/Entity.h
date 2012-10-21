@@ -13,15 +13,20 @@
 #include <set>
 #include <string>
 
+#include <Box2D.h>
+
 class Component;
 
 class Entity {
-protected:
+    friend class Component;
+
     std::string mName;
     std::set<std::string> mTags;
 
     std::list<Component*> mComponents;
-    friend class Component;
+
+protected:
+    b2Body* body;
 
 public:
     Entity();
@@ -29,11 +34,11 @@ public:
     void update(float delta);
     void render();
 
+    b2AABB getAABB () const;
+
     // Component management
     template<typename T>
     T* getComponent() const;
-    template<typename T>
-    void createComponent();
     void addComponent(Component *component);
 
     // Entity registration

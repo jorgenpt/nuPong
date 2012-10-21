@@ -1,5 +1,5 @@
 template<typename T>
-T* Entity::getComponent() const
+inline T* Entity::getComponent() const
 {
     for (auto it = mComponents.begin(); it != mComponents.end(); ++it)
     {
@@ -11,10 +11,4 @@ T* Entity::getComponent() const
     }
 
     return NULL;
-}
-
-template<typename T>
-void Entity::createComponent()
-{
-    addComponent(new T(this));
 }

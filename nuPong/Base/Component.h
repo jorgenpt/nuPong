@@ -20,12 +20,13 @@ public:
     virtual void render() = 0;
     virtual void update(float delta) = 0;
 
+    Entity& getEntity();
+    void setBody(b2Body* body);
+    b2Body* getBody();
+
     template<typename T>
     T* getComponent() const;
-    template<typename T>
-    void createComponent();
     void addComponent(Component *component);
-    Entity& getEntity();
 };
 
 #include "Component.inl"

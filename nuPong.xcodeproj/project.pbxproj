@@ -18,6 +18,10 @@
 		C5E4BDBB16334081006B3728 /* ProgrammaticGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDB916334081006B3728 /* ProgrammaticGeometry.cpp */; };
 		C5E4BDBE163342B9006B3728 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDBC163342B9006B3728 /* Ball.cpp */; };
 		C5E4BDCD16335B75006B3728 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDCC16335B75006B3728 /* Entity.cpp */; };
+		C5E4BDD316336983006B3728 /* BoxRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDD116336983006B3728 /* BoxRenderer.cpp */; };
+		C5E4BDD616336CB8006B3728 /* PlayerInputHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDD416336CB8006B3728 /* PlayerInputHandler.cpp */; };
+		C5E4BDD916336F28006B3728 /* SphereRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDD716336F28006B3728 /* SphereRenderer.cpp */; };
+		C5E4BDDC16336F5D006B3728 /* BallMechanics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDDA16336F5D006B3728 /* BallMechanics.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +62,14 @@
 		C5E4BDCC16335B75006B3728 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
 		C5E4BDCE16336025006B3728 /* Entity.inl */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Entity.inl; sourceTree = "<group>"; };
 		C5E4BDCF1633680A006B3728 /* Component.inl */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Component.inl; sourceTree = "<group>"; };
+		C5E4BDD116336983006B3728 /* BoxRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoxRenderer.cpp; sourceTree = "<group>"; };
+		C5E4BDD216336983006B3728 /* BoxRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxRenderer.h; sourceTree = "<group>"; };
+		C5E4BDD416336CB8006B3728 /* PlayerInputHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerInputHandler.cpp; sourceTree = "<group>"; };
+		C5E4BDD516336CB8006B3728 /* PlayerInputHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerInputHandler.h; sourceTree = "<group>"; };
+		C5E4BDD716336F28006B3728 /* SphereRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SphereRenderer.cpp; sourceTree = "<group>"; };
+		C5E4BDD816336F28006B3728 /* SphereRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SphereRenderer.h; sourceTree = "<group>"; };
+		C5E4BDDA16336F5D006B3728 /* BallMechanics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BallMechanics.cpp; sourceTree = "<group>"; };
+		C5E4BDDB16336F5D006B3728 /* BallMechanics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallMechanics.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				C5E4BDC616335ADA006B3728 /* Base */,
+				C5E4BDD016336977006B3728 /* Components */,
 				C5E4BDB116333FDE006B3728 /* Entities */,
 				C5E4BDB81633406C006B3728 /* Utilities */,
 				C59C1632162B380300ECDEA9 /* main.cpp */,
@@ -149,6 +162,21 @@
 				C5E4BDC816335ADA006B3728 /* StaticEntity.h */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		C5E4BDD016336977006B3728 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C5E4BDD116336983006B3728 /* BoxRenderer.cpp */,
+				C5E4BDD216336983006B3728 /* BoxRenderer.h */,
+				C5E4BDD716336F28006B3728 /* SphereRenderer.cpp */,
+				C5E4BDD816336F28006B3728 /* SphereRenderer.h */,
+				C5E4BDD416336CB8006B3728 /* PlayerInputHandler.cpp */,
+				C5E4BDD516336CB8006B3728 /* PlayerInputHandler.h */,
+				C5E4BDDA16336F5D006B3728 /* BallMechanics.cpp */,
+				C5E4BDDB16336F5D006B3728 /* BallMechanics.h */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +256,10 @@
 				C5E4BDBB16334081006B3728 /* ProgrammaticGeometry.cpp in Sources */,
 				C5E4BDBE163342B9006B3728 /* Ball.cpp in Sources */,
 				C5E4BDCD16335B75006B3728 /* Entity.cpp in Sources */,
+				C5E4BDD316336983006B3728 /* BoxRenderer.cpp in Sources */,
+				C5E4BDD616336CB8006B3728 /* PlayerInputHandler.cpp in Sources */,
+				C5E4BDD916336F28006B3728 /* SphereRenderer.cpp in Sources */,
+				C5E4BDDC16336F5D006B3728 /* BallMechanics.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

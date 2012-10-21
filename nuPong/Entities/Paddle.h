@@ -9,23 +9,12 @@
 #ifndef __nuPong__Paddle__
 #define __nuPong__Paddle__
 
-#include "Game.h"
-
-#include <OpenGL/OpenGL.h>
+#include "Entity.h"
 
 class Paddle : public Entity {
-    GLuint vertexVboId, indexVboId;
-    b2Body* body;
     b2Body* createBoxBody(b2World& world, b2Vec2 topLeft, b2Vec2 bottomRight);
-
-    b2AABB getAABB () const;
-
 public:
     Paddle(b2World& world, float width);
-
-    virtual void render();
-    virtual void update(float delta);
-
     float getHeight() const { return 0.25; }
 };
 
