@@ -61,7 +61,6 @@
 		C5E4BDC31633572F006B3728 /* AutoPaddle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AutoPaddle.cpp; sourceTree = "<group>"; };
 		C5E4BDC41633572F006B3728 /* AutoPaddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoPaddle.h; sourceTree = "<group>"; };
 		C5E4BDC716335ADA006B3728 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
-		C5E4BDC816335ADA006B3728 /* StaticEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticEntity.h; sourceTree = "<group>"; };
 		C5E4BDCA16335B6F006B3728 /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
 		C5E4BDCC16335B75006B3728 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
 		C5E4BDCE16336025006B3728 /* Entity.inl */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = Entity.inl; sourceTree = "<group>"; };
@@ -167,7 +166,6 @@
 				C5E4BDCC16335B75006B3728 /* Entity.cpp */,
 				C5E4BDC716335ADA006B3728 /* Entity.h */,
 				C5E4BDCE16336025006B3728 /* Entity.inl */,
-				C5E4BDC816335ADA006B3728 /* StaticEntity.h */,
 			);
 			path = Base;
 			sourceTree = "<group>";

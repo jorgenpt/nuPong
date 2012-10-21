@@ -12,7 +12,6 @@
 #include "Physics.h"
 
 #include "Entity.h"
-#include "StaticEntity.h"
 
 #include <list>
 #include <map>
@@ -20,8 +19,7 @@
 class Game {
     static Game gameInstance;
 
-    std::list<Entity*> dynamicEntities;
-    std::list<StaticEntity*> staticEntities;
+    std::list<Entity*> entities;
     std::map<std::string, Entity*> names;
     std::map<std::string, std::list<Entity*>> tags;
     Physics physics;
@@ -46,8 +44,6 @@ public:
     void removeEntityTag(Entity* entity, const std::string& tag);
     std::list<Entity*> getEntitiesWithTag(const std::string& tag) const;
     Entity* getEntityWithTag(const std::string& tag) const;
-
-    void foreach_entity(std::function<void(Entity*)> func);
 };
 
 #endif

@@ -33,40 +33,34 @@ void Game::initialize() {
     b2World& world = physics.getWorld();
     b2Vec2 size = getSize();
 
-    staticEntities.push_back(new Wall(world, b2Vec2(0.,           size.y), b2Vec2(0.1,          0.)));
-    staticEntities.push_back(new Wall(world, b2Vec2(size.x - 0.1, size.y), b2Vec2(size.x,       0.)));
+    entities.push_back(new Wall(world, b2Vec2(0.,           size.y), b2Vec2(0.1,          0.)));
+    entities.push_back(new Wall(world, b2Vec2(size.x - 0.1, size.y), b2Vec2(size.x,       0.)));
 
     Ball *ball = new Ball(world);
     ball->setName("ball");
 
-    dynamicEntities.push_back(ball);
-    dynamicEntities.push_back(new Paddle(world, PADDLE_INITIAL_WIDTH));
-    dynamicEntities.push_back(new AutoPaddle(world, PADDLE_INITIAL_WIDTH));
+    entities.push_back(ball);
+    entities.push_back(new Paddle(world, PADDLE_INITIAL_WIDTH));
+    entities.push_back(new AutoPaddle(world, PADDLE_INITIAL_WIDTH));
 
-    foreach_entity([](Entity* e) { e->initialize(); });
-}
-
-void Game::foreach_entity(std::function<void(Entity*)> func) {
-    for (auto entity : staticEntities) {
-        func(entity);
-    }
-
-    for (auto entity : dynamicEntities) {
-        func(entity);
+    for (auto entity : entities) {
+        entity->initialize();
     }
 }
 
 void Game::update(float delta) {
     physics.update(delta);
 
-    for (auto dynamicEntity : dynamicEntities) {
-        dynamicEntity->update(delta);
+    for (auto entity : entities) {
+        entity->update(delta);
     }
 }
 
 void Game::render()
 {
-    foreach_entity([](Entity* e) { e->render(); });
+    for (auto entity : entities) {
+        entity->render();
+    }
 }
 
 void Game::setEntityName(Entity* entity, const std::string& name)
