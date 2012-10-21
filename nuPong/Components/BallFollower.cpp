@@ -15,6 +15,18 @@ BallFollower::BallFollower(Entity& owner, float speed) : Component(owner), ballB
     mSpeed = speed;
 }
 
+void BallFollower::initialize()
+{
+    Entity* ball = Game::getInstance().getEntityWithName("ball");
+    if (ball == NULL)
+    {
+        // TODO: Error logging.
+        return;
+    }
+
+    ballBody = ball->body;
+}
+
 void BallFollower::update(float delta)
 {
     b2Body *body = getBody();
@@ -22,13 +34,7 @@ void BallFollower::update(float delta)
         return;
 
     if (ballBody == NULL)
-    {
-        Entity* ball = Game::getInstance().getEntityWithName("ball");
-        if (ball != NULL)
-            ballBody = ball->body;
-        if (ballBody == NULL)
-            return;
-    }
+        return;
 
     float xDelta = ballBody->GetPosition().x - body->GetPosition().x;
     if (b2Abs(xDelta) < 0.1 || ballBody->GetPosition().y < Game::getSize().y / 2.)
