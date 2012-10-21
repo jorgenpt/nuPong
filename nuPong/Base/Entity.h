@@ -28,8 +28,10 @@ public:
 
     Entity();
     ~Entity();
+
+    void initialize();
     void update(float delta);
-    void render();
+    void render() const;
 
     b2AABB getAABB () const;
 

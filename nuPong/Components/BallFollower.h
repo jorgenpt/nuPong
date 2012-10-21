@@ -20,7 +20,7 @@ struct BallFollower : public Component
 
     BallFollower(Entity& owner, float speed);
     void update(float delta);
-    void render() {}
+    void render() const {}
 };
 
 #endif /* defined(__nuPong__BallFollower__) */

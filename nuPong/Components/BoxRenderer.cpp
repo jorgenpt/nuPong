@@ -17,9 +17,9 @@ BoxRenderer::BoxRenderer (Entity& owner, const b2Vec3& extents) : Component(owne
     ProgrammaticGeometry::uploadBox(vertexBufferId, indexBufferId, extents);
 }
 
-void BoxRenderer::render()
+void BoxRenderer::render() const
 {
-    b2Body* body = getBody();
+    const b2Body* body = getBody();
     if (body == NULL) {
         // TODO: Log error.
         return;

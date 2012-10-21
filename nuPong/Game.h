@@ -46,6 +46,8 @@ public:
     void removeEntityTag(Entity* entity, const std::string& tag);
     std::list<Entity*> getEntitiesWithTag(const std::string& tag) const;
     Entity* getEntityWithTag(const std::string& tag) const;
+
+    void foreach_entity(std::function<void(Entity*)> func);
 };
 
 #endif

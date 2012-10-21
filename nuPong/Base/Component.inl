@@ -3,6 +3,11 @@ inline Entity& Component::getEntity()
     return mOwner;
 }
 
+inline const b2Body* Component::getBody() const
+{
+    return mOwner.body;
+}
+
 inline b2Body* Component::getBody()
 {
     return mOwner.body;

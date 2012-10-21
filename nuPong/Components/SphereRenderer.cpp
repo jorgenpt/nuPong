@@ -17,9 +17,9 @@ SphereRenderer::SphereRenderer (Entity& owner, float radius) : Component(owner)
     mQuadric = gluNewQuadric();
 }
 
-void SphereRenderer::render()
+void SphereRenderer::render() const
 {
-    b2Body* body = getBody();
+    const b2Body* body = getBody();
     if (body == NULL) {
         // TODO: Log error.
         return;

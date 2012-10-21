@@ -11,6 +11,7 @@
 #include <GL/glfw.h>
 #include <stdlib.h>
 #include <algorithm>
+#include <functional>
 
 #include "Ball.h"
 #include "Paddle.h"
@@ -41,25 +42,31 @@ void Game::initialize() {
     dynamicEntities.push_back(ball);
     dynamicEntities.push_back(new Paddle(world, PADDLE_INITIAL_WIDTH));
     dynamicEntities.push_back(new AutoPaddle(world, PADDLE_INITIAL_WIDTH));
+
+    foreach_entity([](Entity* e) { e->initialize(); });
+}
+
+void Game::foreach_entity(std::function<void(Entity*)> func) {
+    for (auto entity : staticEntities) {
+        func(entity);
+    }
+
+    for (auto entity : dynamicEntities) {
+        func(entity);
+    }
 }
 
 void Game::update(float delta) {
     physics.update(delta);
 
-    for (auto it = dynamicEntities.begin(); it != dynamicEntities.end(); ++it) {
-        (*it)->update(delta);
+    for (auto dynamicEntity : dynamicEntities) {
+        dynamicEntity->update(delta);
     }
 }
 
 void Game::render()
 {
-    for (auto it = staticEntities.begin(); it != staticEntities.end(); ++it) {
-        (*it)->render();
-    }
-
-    for (auto it = dynamicEntities.begin(); it != dynamicEntities.end(); ++it) {
-        (*it)->render();
-    }
+    foreach_entity([](Entity* e) { e->render(); });
 }
 
 void Game::setEntityName(Entity* entity, const std::string& name)

@@ -17,11 +17,13 @@ public:
     Component(Entity& owner) :mOwner(owner) { }
     virtual ~Component() {}
 
-    virtual void render() = 0;
+    virtual void initialize() {}
+    virtual void render() const = 0;
     virtual void update(float delta) = 0;
 
     Entity& getEntity();
     void setBody(b2Body* body);
+    const b2Body* getBody() const;
     b2Body* getBody();
 
     template<typename T>

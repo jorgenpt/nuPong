@@ -21,7 +21,7 @@ struct BoxRenderer : public Component
     BoxRenderer (Entity& owner, const b2Vec3& extents);
 
     void update(float delta) {}
-    void render();
+    void render() const;
 };
 
 #endif /* defined(__nuPong__BoxRenderer__) */

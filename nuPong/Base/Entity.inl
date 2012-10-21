@@ -1,13 +1,11 @@
 template<typename T>
 inline T* Entity::getComponent() const
 {
-    for (auto it = mComponents.begin(); it != mComponents.end(); ++it)
+    for (auto component : mComponents)
     {
-        T* component = dynamic_cast<T*>(*it);
-        if (component != NULL)
-        {
-            return component;
-        }
+        T* componentCast = dynamic_cast<T*>(component);
+        if (componentCast != NULL)
+            return componentCast;
     }
 
     return NULL;

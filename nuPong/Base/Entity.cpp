@@ -13,15 +13,30 @@
 
 Entity::Entity() :mName("")
 {
-
 }
 
 Entity::~Entity()
 {
-    for (auto it = mComponents.begin(); it != mComponents.end(); ++it)
-    {
-        delete *it;
-    }
+    for (auto component : mComponents)
+        delete component;
+}
+
+void Entity::initialize()
+{
+    for (auto component : mComponents)
+        component->initialize();
+}
+
+void Entity::update(float delta)
+{
+    for (auto component : mComponents)
+        component->update(delta);
+}
+
+void Entity::render() const
+{
+    for (auto component : mComponents)
+        component->render();
 }
 
 void Entity::addComponent(Component *component)
@@ -61,18 +76,6 @@ void Entity::removeTag(const std::string& tag)
 
     mTags.erase(tagIterator);
     Game::getInstance().removeEntityTag(this, tag);
-}
-
-void Entity::render()
-{
-    for (auto it = mComponents.begin(); it != mComponents.end(); ++it)
-        (*it)->render();
-}
-
-void Entity::update(float delta)
-{
-    for (auto it = mComponents.begin(); it != mComponents.end(); ++it)
-        (*it)->update(delta);
 }
 
 b2AABB Entity::getAABB () const
