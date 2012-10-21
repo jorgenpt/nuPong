@@ -11,6 +11,8 @@
 		C52C77FB1633BC7F009441EA /* Physics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C52C77F91633BC7F009441EA /* Physics.cpp */; };
 		C52C77FE1633BD9F009441EA /* CollisionHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C52C77FC1633BD9F009441EA /* CollisionHandler.cpp */; };
 		C52C78011633C10C009441EA /* WallCollision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C52C77FF1633C10C009441EA /* WallCollision.cpp */; };
+		C52C78051633CA02009441EA /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C52C78031633CA02009441EA /* Material.cpp */; };
+		C52C78081633D0A7009441EA /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C52C78061633D0A7009441EA /* Shader.cpp */; };
 		C59C1633162B380300ECDEA9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C1632162B380300ECDEA9 /* main.cpp */; };
 		C59C1635162B380300ECDEA9 /* nuPong.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C59C1634162B380300ECDEA9 /* nuPong.1 */; };
 		C59C163F162B39C900ECDEA9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59C163E162B39C900ECDEA9 /* OpenGL.framework */; };
@@ -50,6 +52,10 @@
 		C52C77FD1633BD9F009441EA /* CollisionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionHandler.h; sourceTree = "<group>"; };
 		C52C77FF1633C10C009441EA /* WallCollision.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WallCollision.cpp; sourceTree = "<group>"; };
 		C52C78001633C10C009441EA /* WallCollision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallCollision.h; sourceTree = "<group>"; };
+		C52C78031633CA02009441EA /* Material.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Material.cpp; sourceTree = "<group>"; };
+		C52C78041633CA02009441EA /* Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Material.h; sourceTree = "<group>"; };
+		C52C78061633D0A7009441EA /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		C52C78071633D0A7009441EA /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		C59C162E162B380300ECDEA9 /* nuPong */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = nuPong; sourceTree = BUILT_PRODUCTS_DIR; };
 		C59C1632162B380300ECDEA9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C59C1634162B380300ECDEA9 /* nuPong.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = nuPong.1; sourceTree = "<group>"; };
@@ -107,6 +113,17 @@
 			path = Physics;
 			sourceTree = "<group>";
 		};
+		C52C78021633C9F8009441EA /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				C52C78031633CA02009441EA /* Material.cpp */,
+				C52C78041633CA02009441EA /* Material.h */,
+				C52C78061633D0A7009441EA /* Shader.cpp */,
+				C52C78071633D0A7009441EA /* Shader.h */,
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
 		C59C1623162B380300ECDEA9 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +149,7 @@
 				C5E4BDC616335ADA006B3728 /* Base */,
 				C5E4BDD016336977006B3728 /* Components */,
 				C5E4BDB116333FDE006B3728 /* Entities */,
+				C52C78021633C9F8009441EA /* Rendering */,
 				C52C77F81633BC7F009441EA /* Physics */,
 				C5E4BDB81633406C006B3728 /* Utilities */,
 				C59C1632162B380300ECDEA9 /* main.cpp */,
@@ -290,6 +308,8 @@
 				C52C77FB1633BC7F009441EA /* Physics.cpp in Sources */,
 				C52C77FE1633BD9F009441EA /* CollisionHandler.cpp in Sources */,
 				C52C78011633C10C009441EA /* WallCollision.cpp in Sources */,
+				C52C78051633CA02009441EA /* Material.cpp in Sources */,
+				C52C78081633D0A7009441EA /* Shader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
