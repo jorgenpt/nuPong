@@ -51,6 +51,8 @@ void setup() {
         exit(EXIT_FAILURE);
     }
 
+    glfwSetWindowTitle("nuPong");
+
     glfwSetWindowSizeCallback(&window_resized);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
