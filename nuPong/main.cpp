@@ -19,6 +19,11 @@
 
 void GLFWCALL window_resized(int width, int height) {
     glViewport(0, 0, width, height);
+
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluPerspective(90., (float)width/height, 3.0, 6.0);
+    glTranslatef(-10./2., -7.5/2., -5.);
 }
 
 void render(Game& game) {
@@ -53,15 +58,11 @@ void setup() {
     }
 
     char *pwd = getcwd(NULL, 0);
-    printf("%s\n", pwd);
+    printf("Working directory: %s\n", pwd);
     free(pwd);
 
     glfwSetWindowTitle("nuPong");
-
     glfwSetWindowSizeCallback(&window_resized);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glOrtho(0., 10., 0., 7.5, -1., 1.);
 }
 
 int main(void)

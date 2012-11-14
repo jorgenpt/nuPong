@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		55FD216592A74512A7FB733F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BB959D9F0D84297B13B4358 /* libPods.a */; };
-		C516A30B1633E3D300946141 /* blink.frag in Sources */ = {isa = PBXBuildFile; fileRef = C516A3091633E3D300946141 /* blink.frag */; };
-		C516A30C1633E3D300946141 /* blink.vert in Sources */ = {isa = PBXBuildFile; fileRef = C516A30A1633E3D300946141 /* blink.vert */; };
 		C52C77FB1633BC7F009441EA /* Physics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C52C77F91633BC7F009441EA /* Physics.cpp */; };
 		C52C77FE1633BD9F009441EA /* CollisionHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C52C77FC1633BD9F009441EA /* CollisionHandler.cpp */; };
 		C52C78011633C10C009441EA /* WallCollision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C52C77FF1633C10C009441EA /* WallCollision.cpp */; };
@@ -324,8 +322,6 @@
 				C52C78011633C10C009441EA /* WallCollision.cpp in Sources */,
 				C52C78051633CA02009441EA /* Material.cpp in Sources */,
 				C52C78081633D0A7009441EA /* Shader.cpp in Sources */,
-				C516A30B1633E3D300946141 /* blink.frag in Sources */,
-				C516A30C1633E3D300946141 /* blink.vert in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

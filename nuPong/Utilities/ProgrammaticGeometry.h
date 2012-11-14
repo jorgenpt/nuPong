@@ -13,7 +13,7 @@
 #include <Box2D.h>
 
 struct ProgrammaticGeometry {
-    static void uploadBox (GLuint& vboId, GLuint& indexId, b2Vec3 extents);
+    static int uploadBox (GLuint& vboId, GLuint& indexId, b2Vec3 extents);
 
 private:
     static unsigned short* createTrianglesForQuad (unsigned short topLeft, unsigned short bottomLeft,

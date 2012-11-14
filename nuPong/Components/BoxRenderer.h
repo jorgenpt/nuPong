@@ -19,6 +19,7 @@
 struct BoxRenderer : public Component
 {
     Material *material;
+    int numVertices;
     GLuint vertexBufferId, indexBufferId;
     bool blink;
     double blinkStart;
