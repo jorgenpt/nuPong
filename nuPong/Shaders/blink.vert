@@ -1,5 +1,3 @@
-#version 120
-
 uniform float blink_y;
 varying float position_relative_to_blink_y;
 

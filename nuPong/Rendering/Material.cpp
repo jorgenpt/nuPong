@@ -122,6 +122,8 @@ Shader *Material::loadShader(GLenum type, const std::string& commonPath, const s
     std::vector<std::string> commonShaders;
 
     if (Filesystem::entries(commonPath, &commonShaders)) {
+        std::sort(commonShaders.begin(), commonShaders.end());
+
         for (auto commonShader : commonShaders) {
             if (!Strings::endsWith(commonShader, extension))
                 continue;
@@ -135,7 +137,7 @@ Shader *Material::loadShader(GLenum type, const std::string& commonPath, const s
 
     Shader *shader = NULL;
     if (Filesystem::readFile(path, &shaderContent)) {
-        shader = new Shader(type, shaderContent + commonShadersContent);
+        shader = new Shader(type, commonShadersContent + shaderContent);
     }
 
     return shader;

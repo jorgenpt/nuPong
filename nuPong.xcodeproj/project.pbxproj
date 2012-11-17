@@ -34,6 +34,8 @@
 		C5E4BDD916336F28006B3728 /* SphereRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDD716336F28006B3728 /* SphereRenderer.cpp */; };
 		C5E4BDDC16336F5D006B3728 /* BallMechanics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDDA16336F5D006B3728 /* BallMechanics.cpp */; };
 		C5E4BDDF16337EAA006B3728 /* BallFollower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDDD16337EAA006B3728 /* BallFollower.cpp */; };
+		C5E863C21657790B007E435D /* 00-header.frag in Sources */ = {isa = PBXBuildFile; fileRef = C5E863C01657790B007E435D /* 00-header.frag */; };
+		C5E863C31657790B007E435D /* 00-header.vert in Sources */ = {isa = PBXBuildFile; fileRef = C5E863C11657790B007E435D /* 00-header.vert */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -106,6 +108,8 @@
 		C5E4BDDB16336F5D006B3728 /* BallMechanics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallMechanics.h; sourceTree = "<group>"; };
 		C5E4BDDD16337EAA006B3728 /* BallFollower.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BallFollower.cpp; sourceTree = "<group>"; };
 		C5E4BDDE16337EAA006B3728 /* BallFollower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallFollower.h; sourceTree = "<group>"; };
+		C5E863C01657790B007E435D /* 00-header.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = "00-header.frag"; sourceTree = "<group>"; };
+		C5E863C11657790B007E435D /* 00-header.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = "00-header.vert"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +207,8 @@
 		C5E03FFE16574D2A00A191EE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C5E863C01657790B007E435D /* 00-header.frag */,
+				C5E863C11657790B007E435D /* 00-header.vert */,
 				C5E03FFF16574D2A00A191EE /* phong.frag */,
 			);
 			path = Common;
@@ -364,6 +370,8 @@
 				C5E0400E16575E0A00A191EE /* Light.cpp in Sources */,
 				C5E0401216575E1600A191EE /* LightSource.cpp in Sources */,
 				C5E040151657660800A191EE /* Mesh.cpp in Sources */,
+				C5E863C21657790B007E435D /* 00-header.frag in Sources */,
+				C5E863C31657790B007E435D /* 00-header.vert in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
