@@ -17,6 +17,7 @@
 		C59C1635162B380300ECDEA9 /* nuPong.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C59C1634162B380300ECDEA9 /* nuPong.1 */; };
 		C59C163F162B39C900ECDEA9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59C163E162B39C900ECDEA9 /* OpenGL.framework */; };
 		C59C1645162B3A7500ECDEA9 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C59C1644162B3A7500ECDEA9 /* Game.cpp */; };
+		C5E0400016574D2A00A191EE /* phong.frag in Sources */ = {isa = PBXBuildFile; fileRef = C5E03FFF16574D2A00A191EE /* phong.frag */; };
 		C5E040041657526000A191EE /* Filesystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E040021657526000A191EE /* Filesystem.cpp */; };
 		C5E0400716575BFA00A191EE /* Strings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E0400516575BFA00A191EE /* Strings.cpp */; };
 		C5E4BDB616333FDE006B3728 /* Paddle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDB216333FDE006B3728 /* Paddle.cpp */; };
@@ -66,6 +67,7 @@
 		C59C163E162B39C900ECDEA9 /* OpenGL.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		C59C1644162B3A7500ECDEA9 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		C59C1646162B3B1400ECDEA9 /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		C5E03FFF16574D2A00A191EE /* phong.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = phong.frag; sourceTree = "<group>"; };
 		C5E040021657526000A191EE /* Filesystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Filesystem.cpp; sourceTree = "<group>"; };
 		C5E040031657526000A191EE /* Filesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filesystem.h; sourceTree = "<group>"; };
 		C5E0400516575BFA00A191EE /* Strings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Strings.cpp; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		C516A3081633E32B00946141 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				C5E03FFE16574D2A00A191EE /* Common */,
 				C516A3091633E3D300946141 /* blink.frag */,
 				C516A30A1633E3D300946141 /* blink.vert */,
 			);
@@ -184,6 +187,14 @@
 				C59C163E162B39C900ECDEA9 /* OpenGL.framework */,
 			);
 			name = Libraries;
+			sourceTree = "<group>";
+		};
+		C5E03FFE16574D2A00A191EE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C5E03FFF16574D2A00A191EE /* phong.frag */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		C5E4BDB116333FDE006B3728 /* Entities */ = {
@@ -332,6 +343,7 @@
 				C52C78011633C10C009441EA /* WallCollision.cpp in Sources */,
 				C52C78051633CA02009441EA /* Material.cpp in Sources */,
 				C52C78081633D0A7009441EA /* Shader.cpp in Sources */,
+				C5E0400016574D2A00A191EE /* phong.frag in Sources */,
 				C5E040041657526000A191EE /* Filesystem.cpp in Sources */,
 				C5E0400716575BFA00A191EE /* Strings.cpp in Sources */,
 			);
