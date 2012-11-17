@@ -20,6 +20,8 @@
 		C5E0400016574D2A00A191EE /* phong.frag in Sources */ = {isa = PBXBuildFile; fileRef = C5E03FFF16574D2A00A191EE /* phong.frag */; };
 		C5E040041657526000A191EE /* Filesystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E040021657526000A191EE /* Filesystem.cpp */; };
 		C5E0400716575BFA00A191EE /* Strings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E0400516575BFA00A191EE /* Strings.cpp */; };
+		C5E0400E16575E0A00A191EE /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E0400C16575E0A00A191EE /* Light.cpp */; };
+		C5E0401216575E1600A191EE /* LightSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E0401016575E1600A191EE /* LightSource.cpp */; };
 		C5E040151657660800A191EE /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E040131657660800A191EE /* Mesh.cpp */; };
 		C5E4BDB616333FDE006B3728 /* Paddle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDB216333FDE006B3728 /* Paddle.cpp */; };
 		C5E4BDB716333FDE006B3728 /* Wall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDB416333FDE006B3728 /* Wall.cpp */; };
@@ -73,6 +75,10 @@
 		C5E040031657526000A191EE /* Filesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filesystem.h; sourceTree = "<group>"; };
 		C5E0400516575BFA00A191EE /* Strings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Strings.cpp; sourceTree = "<group>"; };
 		C5E0400616575BFA00A191EE /* Strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Strings.h; sourceTree = "<group>"; };
+		C5E0400C16575E0A00A191EE /* Light.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Light.cpp; sourceTree = "<group>"; };
+		C5E0400D16575E0A00A191EE /* Light.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Light.h; sourceTree = "<group>"; };
+		C5E0401016575E1600A191EE /* LightSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LightSource.cpp; sourceTree = "<group>"; };
+		C5E0401116575E1600A191EE /* LightSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightSource.h; sourceTree = "<group>"; };
 		C5E040131657660800A191EE /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
 		C5E040141657660800A191EE /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
 		C5E4BDB216333FDE006B3728 /* Paddle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Paddle.cpp; sourceTree = "<group>"; };
@@ -209,6 +215,8 @@
 				C5E4BDC41633572F006B3728 /* AutoPaddle.h */,
 				C5E4BDBC163342B9006B3728 /* Ball.cpp */,
 				C5E4BDBD163342B9006B3728 /* Ball.h */,
+				C5E0400C16575E0A00A191EE /* Light.cpp */,
+				C5E0400D16575E0A00A191EE /* Light.h */,
 				C5E4BDB216333FDE006B3728 /* Paddle.cpp */,
 				C5E4BDB316333FDE006B3728 /* Paddle.h */,
 				C5E4BDB416333FDE006B3728 /* Wall.cpp */,
@@ -251,6 +259,8 @@
 				C5E4BDDB16336F5D006B3728 /* BallMechanics.h */,
 				C5E4BDD116336983006B3728 /* BoxRenderer.cpp */,
 				C5E4BDD216336983006B3728 /* BoxRenderer.h */,
+				C5E0401016575E1600A191EE /* LightSource.cpp */,
+				C5E0401116575E1600A191EE /* LightSource.h */,
 				C5E4BDD416336CB8006B3728 /* PlayerInputHandler.cpp */,
 				C5E4BDD516336CB8006B3728 /* PlayerInputHandler.h */,
 				C5E4BDD716336F28006B3728 /* SphereRenderer.cpp */,
@@ -351,6 +361,8 @@
 				C5E0400016574D2A00A191EE /* phong.frag in Sources */,
 				C5E040041657526000A191EE /* Filesystem.cpp in Sources */,
 				C5E0400716575BFA00A191EE /* Strings.cpp in Sources */,
+				C5E0400E16575E0A00A191EE /* Light.cpp in Sources */,
+				C5E0401216575E1600A191EE /* LightSource.cpp in Sources */,
 				C5E040151657660800A191EE /* Mesh.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
