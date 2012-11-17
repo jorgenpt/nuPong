@@ -8,11 +8,10 @@
 
 #include "Material.h"
 
-#include <fstream>
-#include <sstream>
 #include <iostream>
 
 #include "Shader.h"
+#include "Filesystem.h"
 
 GLuint Material::activeProgram = 0;
 
@@ -119,14 +118,10 @@ void Material::deactivate()
 Shader *Material::loadShader(GLenum type, const std::string& path)
 {
     Shader *shader = NULL;
+    std::string shaderContent;
 
-    //First, let us load the vertex shader.
-    std::fstream file(path, std::ios::in);
-    if (file.is_open()) {
-        //This is to help store the file's buffer.
-        std::stringstream buffer;
-        buffer << file.rdbuf();
-        shader = new Shader(type, buffer.str());
+    if (Filesystem::readFile(path, &shaderContent)) {
+        shader = new Shader(type, shaderContent);
     }
 
     return shader;
