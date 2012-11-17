@@ -10,7 +10,7 @@
 
 #include <GL/glfw.h>
 
-int ProgrammaticGeometry::uploadBox (GLuint& vboId, GLuint& indexId, b2Vec3 extents)
+Mesh *ProgrammaticGeometry::uploadBox (b2Vec3 extents)
 {
     b2Vec3 vertices[8];
     vertices[0] = b2Vec3(-extents.x,  extents.y,  extents.z);
@@ -42,15 +42,21 @@ int ProgrammaticGeometry::uploadBox (GLuint& vboId, GLuint& indexId, b2Vec3 exte
     // Far face
     indicesWalker = createTrianglesForQuad(3, 5, 7, 1, indicesWalker);
 
-    glGenBuffers(1, &vboId);
-    glBindBuffer(GL_ARRAY_BUFFER, vboId);
+    GLuint vertexBufferId;
+    glGenBuffers(1, &vertexBufferId);
+    glBindBuffer(GL_ARRAY_BUFFER, vertexBufferId);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), &vertices[0], GL_STATIC_DRAW);
 
-    glGenBuffers(1, &indexId);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexId);
+    GLuint indexBufferId;
+    glGenBuffers(1, &indexBufferId);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferId);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), &indices[0], GL_STATIC_DRAW);
 
-    return sizeof(indices);
+    Mesh *mesh = new Mesh();
+    mesh->numVertices = sizeof(vertices);
+    mesh->vertexBufferId = vertexBufferId;
+    mesh->indexBufferId = indexBufferId;
+    return mesh;
 }
 
 unsigned short* ProgrammaticGeometry::createTrianglesForQuad (unsigned short topLeft, unsigned short bottomLeft,

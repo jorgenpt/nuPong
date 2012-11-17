@@ -15,7 +15,7 @@
 BoxRenderer::BoxRenderer (Entity& owner, const b2Vec3& extents, Material *material_)
     : Component(owner), blink(false), material(material_)
 {
-    numVertices = ProgrammaticGeometry::uploadBox(vertexBufferId, indexBufferId, extents);
+    mesh = ProgrammaticGeometry::uploadBox(extents);
     if (material)
         material->setUniform("blink_t", 2.);
 }
@@ -23,6 +23,7 @@ BoxRenderer::BoxRenderer (Entity& owner, const b2Vec3& extents, Material *materi
 BoxRenderer::~BoxRenderer ()
 {
     delete material;
+    delete mesh;
 }
 
 void BoxRenderer::render() const
@@ -41,12 +42,7 @@ void BoxRenderer::render() const
     glTranslatef(position.x, position.y, 0.5);
     glColor3f(0.9, 0.9, 1.0);
 
-    glBindBuffer(GL_ARRAY_BUFFER, vertexBufferId);
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(b2Vec3), 0);
-
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferId);
-    glDrawElements(GL_TRIANGLES, numVertices, GL_UNSIGNED_SHORT, 0);
+    mesh->render();
 
     if (material)
         Material::deactivate();

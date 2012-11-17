@@ -20,6 +20,7 @@
 		C5E0400016574D2A00A191EE /* phong.frag in Sources */ = {isa = PBXBuildFile; fileRef = C5E03FFF16574D2A00A191EE /* phong.frag */; };
 		C5E040041657526000A191EE /* Filesystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E040021657526000A191EE /* Filesystem.cpp */; };
 		C5E0400716575BFA00A191EE /* Strings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E0400516575BFA00A191EE /* Strings.cpp */; };
+		C5E040151657660800A191EE /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E040131657660800A191EE /* Mesh.cpp */; };
 		C5E4BDB616333FDE006B3728 /* Paddle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDB216333FDE006B3728 /* Paddle.cpp */; };
 		C5E4BDB716333FDE006B3728 /* Wall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDB416333FDE006B3728 /* Wall.cpp */; };
 		C5E4BDBB16334081006B3728 /* ProgrammaticGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5E4BDB916334081006B3728 /* ProgrammaticGeometry.cpp */; };
@@ -72,6 +73,8 @@
 		C5E040031657526000A191EE /* Filesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filesystem.h; sourceTree = "<group>"; };
 		C5E0400516575BFA00A191EE /* Strings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Strings.cpp; sourceTree = "<group>"; };
 		C5E0400616575BFA00A191EE /* Strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Strings.h; sourceTree = "<group>"; };
+		C5E040131657660800A191EE /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
+		C5E040141657660800A191EE /* Mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
 		C5E4BDB216333FDE006B3728 /* Paddle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Paddle.cpp; sourceTree = "<group>"; };
 		C5E4BDB316333FDE006B3728 /* Paddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paddle.h; sourceTree = "<group>"; };
 		C5E4BDB416333FDE006B3728 /* Wall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wall.cpp; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 			children = (
 				C52C77FC1633BD9F009441EA /* CollisionHandler.cpp */,
 				C52C77FD1633BD9F009441EA /* CollisionHandler.h */,
+				C5E040131657660800A191EE /* Mesh.cpp */,
+				C5E040141657660800A191EE /* Mesh.h */,
 				C52C77F91633BC7F009441EA /* Physics.cpp */,
 				C52C77FA1633BC7F009441EA /* Physics.h */,
 			);
@@ -346,6 +351,7 @@
 				C5E0400016574D2A00A191EE /* phong.frag in Sources */,
 				C5E040041657526000A191EE /* Filesystem.cpp in Sources */,
 				C5E0400716575BFA00A191EE /* Strings.cpp in Sources */,
+				C5E040151657660800A191EE /* Mesh.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

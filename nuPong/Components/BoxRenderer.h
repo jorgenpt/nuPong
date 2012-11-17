@@ -15,12 +15,12 @@
 #include <OpenGL/OpenGL.h>
 
 #include "Material.h"
+#include "Mesh.h"
 
 struct BoxRenderer : public Component
 {
     Material *material;
-    int numVertices;
-    GLuint vertexBufferId, indexBufferId;
+    Mesh *mesh;
     bool blink;
     double blinkStart;
 
