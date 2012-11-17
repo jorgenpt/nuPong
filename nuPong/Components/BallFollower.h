@@ -20,8 +20,8 @@ struct BallFollower : public Component
 
     BallFollower(Entity& owner, float speed);
 
-    void initialize();
-    void update(float delta);
+    void initialize() override;
+    void update(float delta) override;
 };
 
 #endif /* defined(__nuPong__BallFollower__) */

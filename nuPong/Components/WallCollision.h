@@ -18,7 +18,7 @@ struct WallCollision : Component
     BoxRenderer *renderer;
 
     WallCollision(Entity& owner) : Component(owner) {}
-    void initialize();
+    void initialize() override;
 };
 
 #endif /* defined(__nuPong__WallCollision__) */

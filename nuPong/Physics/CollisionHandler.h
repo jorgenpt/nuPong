@@ -21,8 +21,8 @@ struct CollisionHandler : b2ContactListener {
     std::map<b2Body*, Handler> handlers;
 
     void handleCollision(b2Contact* contact, b2Body* first, b2Body* second);
-    
-	virtual void BeginContact(b2Contact* contact);
+
+    virtual void BeginContact(b2Contact* contact) override;
 };
 
 #endif /* defined(__nuPong__CollisionHandler__) */

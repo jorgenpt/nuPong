@@ -17,7 +17,7 @@ struct PlayerInputHandler : public Component
 
     float mSpeed;
 
-    void update(float delta);
+    void update(float delta) override;
 };
 
 #endif /* defined(__nuPong__PlayerInputHandler__) */

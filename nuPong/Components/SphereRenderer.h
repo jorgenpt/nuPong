@@ -23,8 +23,7 @@ public:
 
     SphereRenderer (Entity& owner, float radius);
 
-    void update(float delta) {}
-    void render() const;
+    void render() const override;
 };
 
 #endif /* defined(__nuPong__SphereRenderer__) */

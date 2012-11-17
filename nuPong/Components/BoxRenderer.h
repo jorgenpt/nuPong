@@ -27,8 +27,8 @@ struct BoxRenderer : public Component
     BoxRenderer (Entity& owner, const b2Vec3& extents, Material *material = NULL);
     ~BoxRenderer ();
 
-    void update(float delta);
-    void render() const;
+    void update(float delta) override;
+    void render() const override;
 
     void startBlinkAt(b2Vec2 position);
 };
