@@ -12,6 +12,7 @@
 
 #include "Shader.h"
 #include "Filesystem.h"
+#include "Strings.h"
 
 GLuint Material::activeProgram = 0;
 
@@ -21,19 +22,18 @@ Material::Material(const std::string& vertexShaderPath, const std::string& fragm
     Shader *vertexShader = NULL, *fragmentShader = NULL;
 
     if (vertexShaderPath.length() > 0)
-        vertexShader = loadShader(GL_VERTEX_SHADER, "Shaders/" + vertexShaderPath);
-    if (fragmentShaderPath.length() > 0)
-        fragmentShader = loadShader(GL_FRAGMENT_SHADER, "Shaders/" + fragmentShaderPath);
-
+        vertexShader = loadShader(GL_VERTEX_SHADER, "Shaders/Common", "Shaders/" + vertexShaderPath);
     if (vertexShader && vertexShader->getType() != GL_VERTEX_SHADER)
     {
-        std::cerr << "Got invalid vertex shader, ignoring.";
+        std::cerr << "Got invalid vertex shader, ignoring." << std::endl;
         vertexShader = NULL;
     }
 
+    if (fragmentShaderPath.length() > 0)
+        fragmentShader = loadShader(GL_FRAGMENT_SHADER, "Shaders/Common", "Shaders/" + fragmentShaderPath);
     if (fragmentShader && fragmentShader->getType() != GL_FRAGMENT_SHADER)
     {
-        std::cerr << "Got invalid vertex shader, ignoring.";
+        std::cerr << "Got invalid vertex shader, ignoring." << std::endl;
         fragmentShader = NULL;
     }
 
@@ -115,13 +115,27 @@ void Material::deactivate()
     }
 }
 
-Shader *Material::loadShader(GLenum type, const std::string& path)
+Shader *Material::loadShader(GLenum type, const std::string& commonPath, const std::string& path)
 {
-    Shader *shader = NULL;
-    std::string shaderContent;
+    std::string shaderContent, commonShadersContent;
+    std::string extension(type == GL_VERTEX_SHADER ? ".vert" : ".frag");
+    std::vector<std::string> commonShaders;
 
+    if (Filesystem::entries(commonPath, &commonShaders)) {
+        for (auto commonShader : commonShaders) {
+            if (!Strings::endsWith(commonShader, extension))
+                continue;
+
+            std::string commonShaderContent;
+            if (Filesystem::readFile(commonPath + "/" + commonShader, &commonShaderContent)) {
+                commonShadersContent += commonShaderContent + "\n";
+            }
+        }
+    }
+
+    Shader *shader = NULL;
     if (Filesystem::readFile(path, &shaderContent)) {
-        shader = new Shader(type, shaderContent);
+        shader = new Shader(type, shaderContent + commonShadersContent);
     }
 
     return shader;
